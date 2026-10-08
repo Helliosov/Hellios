@@ -27,10 +27,59 @@ body:before{content:"";position:absolute;inset:0 0 auto;height:1150px;pointer-ev
 @media(max-width:720px){.nav>a:not(.pill){display:none}.hero{padding-top:120px;min-height:750px}.hero-title{font-size:clamp(64px,16vw,112px);margin-top:56px}.floating{display:none}.hero-footer{margin-top:180px}.project-grid{grid-template-columns:1fr}.project.feature{grid-column:auto}.project{min-height:335px}.about-grid{grid-template-columns:1fr}.section{padding:85px 0}.hero-orbit{top:290px;height:240px}}
 @media(max-width:480px){.shell{width:calc(100% - 34px)}.site-header{padding-top:20px}.logo{font-size:16px}.nav .pill{padding:11px 13px;font-size:10px}.hero{padding-top:100px;min-height:650px}.hero-title{font-size:clamp(57px,15.5vw,80px);letter-spacing:-.09em}.hero-desc{font-size:12px}.hero-subtitle{font-size:20px}.hero-footer{margin-top:125px}.hero-footer span{font-size:9px}.section-title{font-size:38px}.project{padding:23px}.services{grid-template-columns:1fr}.service{min-height:210px}.service h3{margin-top:23px}.contact{padding:65px 20px;margin-bottom:70px}.eyebrow{font-size:9px;gap:10px}.eyebrow:before,.eyebrow:after{width:28px}.site-footer{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.floating{animation:none}.reveal{opacity:1;transform:none;transition:none}.pill,.project,.service{transition:none}}
+
+/* Motion and real project media */
+@property --glow-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
+body{animation:page-enter .8s ease both}
+@keyframes page-enter{from{opacity:0}to{opacity:1}}
+.logo-mark{animation:mark-breathe 5s ease-in-out infinite}
+@keyframes mark-breathe{0%,100%{box-shadow:0 0 20px #8faedd25,inset 0 0 12px #d8ecf81a}50%{box-shadow:0 0 42px #9dc4ff55,inset 0 0 19px #d8ecf84b}}
+.hero-title{animation:title-appear 1.2s cubic-bezier(.2,.7,.1,1) both, title-glow 7s ease-in-out infinite alternate}
+@keyframes title-appear{from{opacity:0;filter:blur(14px);transform:translateY(38px) scale(.97)}to{opacity:1;filter:blur(0);transform:none}}
+@keyframes title-glow{from{filter:drop-shadow(0 0 12px #9fc9ff12)}to{filter:drop-shadow(0 0 40px #9fc9ff4a)}}
+.hero-subtitle,.hero-desc,.hero-actions{animation:rise-in .9s both}
+.hero-subtitle{animation-delay:.22s}.hero-desc{animation-delay:.38s}.hero-actions{animation-delay:.54s}
+@keyframes rise-in{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+.grid-bg{animation:grid-drift 28s linear infinite alternate}
+@keyframes grid-drift{to{background-position:43px 86px}}
+.hero-orbit{animation:orbit-breathe 9s ease-in-out infinite}
+@keyframes orbit-breathe{50%{opacity:.45;scale:1.04}}
+.project{--mx:50%;--my:50%;transform-style:preserve-3d;will-change:transform}
+.project:before,.service:before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(158,193,255,.13),transparent 70%);opacity:0;transition:opacity .25s;z-index:0}
+.project:hover:before,.service:hover:before{opacity:1}
+.service{position:relative;overflow:hidden}
+.service-icon{transition:transform .45s,box-shadow .45s}
+.service:hover .service-icon{transform:rotate(-12deg) scale(1.1);box-shadow:0 0 32px #a5c9ff2b,inset 0 0 0 1px var(--line)}
+.tech span{transition:transform .25s,background .25s}.tech span:hover{transform:translateY(-5px);background:#d0e7ff18}
+.project .media-wrap{position:relative;z-index:1;margin:24px 0 20px;border-radius:13px;overflow:hidden;background:#0b1020;border:1px solid rgba(190,215,255,.19);box-shadow:0 18px 50px #0007,0 0 30px #9ec9ff0d}
+.project .media-wrap img,.project .media-wrap video{display:block;width:100%;height:auto;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s}
+.project .media-wrap img{max-height:310px;object-position:top}
+.project:hover .media-wrap img{transform:scale(1.025)}
+.project .media-wrap video{aspect-ratio:16/9;object-fit:cover;max-height:340px}
+.project .media-wrap:after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px #ffffff0d;pointer-events:none}
+.media-caption{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 15px;color:#a9c5e6;font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.07em;background:#0a0d19}
+.media-caption .live-indicator{display:inline-flex;align-items:center;gap:7px;color:#a8e2d8}
+.live-indicator:before{content:"";width:6px;height:6px;background:#a8e2d8;border-radius:50%;box-shadow:0 0 10px #a8e2d8;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.4;box-shadow:0 0 18px #a8e2d8}}
+.project.feature{min-height:unset}
+.project.feature .project-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:center;gap:30px;margin-top:25px}
+.project.feature .media-wrap{margin:0}
+.project.ai-demo{grid-column:span 2;min-height:unset}
+.project.ai-demo .project-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:center;gap:30px;margin-top:25px}
+.project.ai-demo .media-wrap{margin:0}
+.project .media-wrap video::-webkit-media-controls-panel{background:linear-gradient(transparent,#070b18b5)}
+.project .media-wrap video:focus-visible{outline:2px solid #c9e3ff;outline-offset:-2px}
+.project-image-overlay{position:absolute;right:18px;top:18px;padding:7px 11px;border-radius:8px;background:#0a1020aa;backdrop-filter:blur(8px);color:#d3e7ff;font-size:9px;letter-spacing:.08em;pointer-events:none}
+.progress-track{position:fixed;top:0;left:0;height:2px;width:100%;background:linear-gradient(90deg,#86aef5,#e0efff);transform-origin:left;transform:scaleX(0);z-index:100;pointer-events:none}
+.reveal{transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1);transition-delay:var(--reveal-delay,0ms)}
+@media(max-width:820px){.project.feature .project-content,.project.ai-demo .project-content{grid-template-columns:1fr}.project.ai-demo{grid-column:span 1}.project.feature .media-wrap,.project.ai-demo .media-wrap{margin-top:8px}}
+@media(max-width:480px){.project .media-wrap img{max-height:200px}.media-caption{font-size:8px}.project .media-wrap video{max-height:260px}}
+@media(prefers-reduced-motion:reduce){body,.logo-mark,.hero-title,.hero-subtitle,.hero-desc,.hero-actions,.grid-bg,.hero-orbit,.live-indicator:before{animation:none!important}.reveal{transition:none!important;opacity:1!important;transform:none!important}.project,.service{will-change:auto}.project .media-wrap img{transition:none!important}}
+
 </style>
 </head>
 <body>
-<div class="grid-bg" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div><div class="progress-track" id="reading-progress" aria-hidden="true"></div>
 <header class="site-header shell">
 <a class="logo" href="#top" aria-label="HELLIOS home"><span class="logo-mark"><span>H</span></span>HELLIOS</a>
 <nav class="nav" aria-label="Main navigation"><a href="#work">Work</a><a href="#services">Expertise</a><a href="#about">About</a><a class="pill" href="https://t.me/sru58xfzpmq" target="_blank" rel="noopener noreferrer">Let's talk <span class="arrow">↗</span></a></nav>
@@ -51,9 +100,9 @@ body:before{content:"";position:absolute;inset:0 0 auto;height:1150px;pointer-ev
 <section class="section shell" id="work">
 <div class="section-label">01 / Selected work</div><h2 class="section-title reveal">Built to make things work.</h2><p class="section-intro reveal">A selection of working systems and experiments. Project status is clearly marked.</p>
 <div class="project-grid">
-<article class="project feature glass reveal"><div class="project-meta mono"><span>01 / DISCORD INFRASTRUCTURE</span><span class="status live">WORKING PROJECT</span></div><div class="project-decoration" aria-hidden="true">SK</div><div class="project-content"><h3>State Kutuzovsky</h3><p>Multi-server Discord management system with a connected web panel. Curator workflows, appeals, moderation logs, activity analytics and permission-aware administration.</p><div class="tags"><span>TypeScript</span><span>discord.js</span><span>Next.js</span><span>Prisma</span><span>PostgreSQL</span></div></div></article>
+<article class="project feature glass reveal"><div class="project-meta mono"><span>01 / DISCORD INFRASTRUCTURE</span><span class="status live">WORKING PROJECT</span></div><div class="project-decoration" aria-hidden="true">SK</div><div class="project-content"><div><h3>State Kutuzovsky</h3><p>Multi-server Discord management system with a connected web panel. Curator workflows, appeals, moderation logs, activity analytics and permission-aware administration.</p><div class="tags"><span>TypeScript</span><span>discord.js</span><span>Next.js</span><span>Prisma</span><span>PostgreSQL</span></div></div><div class="media-wrap"><img src="assets/state-dashboard.png" alt="Real project screenshot showing the State Kutuzovsky interface" loading="lazy" decoding="async"><span class="project-image-overlay mono">PROJECT SCREENSHOT</span><div class="media-caption"><span>STATE KUTUZOVSKY / INTERFACE</span><span>01 — 02</span></div></div></div></article>
 <article class="project glass reveal"><div class="project-meta mono"><span>02 / WEB3 INTERFACE</span><span class="status">PROTOTYPE</span></div><div class="project-content"><h3>ELYVAR</h3><p>Token-launch workflow concept with a responsive interface and mock API. Real blockchain execution is not implemented.</p><div class="tags"><span>React</span><span>Next.js</span><span>TypeScript</span></div></div></article>
-<article class="project glass reveal"><div class="project-meta mono"><span>03 / AUTOMATION</span><span class="status">DEMO</span></div><div class="project-content"><h3>AI Administrator</h3><p>AI-powered service workflow demonstration with Telegram messaging and automated request handling.</p><div class="tags"><span>n8n</span><span>Telegram</span><span>AI</span><span>Integrations</span></div></div></article>
+<article class="project glass reveal ai-demo"><div class="project-meta mono"><span>03 / AUTOMATION</span><span class="status">DEMO VIDEO</span></div><div class="project-content"><div><h3>AI Administrator</h3><p>AI-powered service workflow demonstration with Telegram messaging and automated request handling. Watch the workflow in action.</p><div class="tags"><span>n8n</span><span>Telegram</span><span>AI</span><span>Integrations</span></div></div><div class="media-wrap"><video autoplay muted loop playsinline controls preload="metadata" poster="assets/ai-admin-poster.jpg" aria-label="AI Administrator demonstration video"><source src="assets/ai-admin-demo.mp4" type="video/mp4">Your browser does not support HTML5 video.</video><div class="media-caption"><span>AI ADMINISTRATOR / WALKTHROUGH</span><span class="live-indicator">VIDEO DEMO</span></div></div></div></article>
 </div></section>
 <section class="section shell" id="services"><div class="section-label">02 / Expertise</div><h2 class="section-title reveal">Tools that move work forward.</h2><p class="section-intro reveal">From a focused feature to an integrated internal system, the goal is useful software that solves the actual problem.</p>
 <div class="services">
@@ -71,5 +120,28 @@ body:before{content:"";position:absolute;inset:0 0 auto;height:1150px;pointer-ev
 <section class="shell" id="contact"><div class="contact glass reveal"><div class="section-label">04 / Contact</div><h2>Let's build something<br>worth using.</h2><p>Have a project in mind? Share the scope, features and timeline.<br>Let's figure out the right approach.</p><a class="pill primary" href="https://t.me/sru58xfzpmq" target="_blank" rel="noopener noreferrer">Message on Telegram <span class="arrow">↗</span></a><span class="handle mono">@sru58xfzpmq</span></div></section>
 </main>
 <footer class="site-footer shell mono"><span>© <span id="year">2026</span> HELLIOS. BUILT WITH INTENT.</span><a href="https://github.com/Helliosov" target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href="#top">BACK TO TOP ↑</a></footer>
-<script>document.getElementById("year").textContent=new Date().getFullYear();if("IntersectionObserver"in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}})},{threshold:.07});document.querySelectorAll(".reveal").forEach(el=>observer.observe(el))}else{document.querySelectorAll(".reveal").forEach(el=>el.classList.add("visible"))}</script>
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const reveals=[...document.querySelectorAll(".reveal")];
+reveals.forEach((el,i)=>{if(el.classList.contains("service")||el.classList.contains("project"))el.style.setProperty("--reveal-delay",(i%4)*85+"ms")});
+if("IntersectionObserver"in window&&!reduceMotion){
+ const revealObserver=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add("visible");revealObserver.unobserve(entry.target)}}},{threshold:.07,rootMargin:"0px 0px -20px 0px"});
+ reveals.forEach(el=>revealObserver.observe(el));
+}else reveals.forEach(el=>el.classList.add("visible"));
+const progress=document.getElementById("reading-progress");
+let raf=0;
+function updateProgress(){raf=0;const max=document.documentElement.scrollHeight-innerHeight;progress.style.transform="scaleX("+(max>0?scrollY/max:0)+")"}
+addEventListener("scroll",()=>{if(!raf)raf=requestAnimationFrame(updateProgress)},{passive:true});updateProgress();
+if(!reduceMotion&&window.matchMedia("(hover: hover) and (pointer: fine)").matches){
+ document.querySelectorAll(".project,.service").forEach(el=>{
+  el.addEventListener("pointermove",event=>{const r=el.getBoundingClientRect();el.style.setProperty("--mx",((event.clientX-r.left)/r.width*100)+"%");el.style.setProperty("--my",((event.clientY-r.top)/r.height*100)+"%")},{passive:true});
+ });
+}
+const demo=document.querySelector(".ai-demo video");
+if(demo){demo.muted=true;demo.defaultMuted=true;demo.setAttribute("muted","");
+ if("IntersectionObserver"in window){const videoObserver=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting&&entry.intersectionRatio>=.15){demo.play().catch(()=>{})}else{demo.pause()}}},{threshold:[0,.15,.35]});videoObserver.observe(demo)}
+ else demo.play().catch(()=>{});
+}
+</script>
 </body></html>
