@@ -20,9 +20,12 @@ The existing three case studies in `index.html` remain unchanged. New approved c
     {
       "id": "example-project",
       "title": "Example Project",
+    "title_ru": "Пример проекта",
       "category": "WEB APPLICATION",
+    "category_ru": "ВЕБ-ПРИЛОЖЕНИЕ",
       "status": "PROTOTYPE",
       "description": "Accurate, approved summary of what exists.",
+    "description_ru": "Подтверждённое описание реального функционала.",
       "stack": ["TypeScript", "React"],
       "image": "assets/example-project.webp",
       "imageAlt": "Illustrated concept cover for Example Project",
@@ -41,3 +44,13 @@ GitHub repository **Settings → Pages → Deploy from a branch → main / (root
 ## Editing the three existing case studies
 
 They remain hand-crafted HTML in `index.html` to preserve their current custom screenshots, gallery and demo video. Updating them requires editing the original HTML; this JSON catalog is for additional case studies.
+
+## Language and avatar
+
+The site now has an **EN / RU** switch in the header. The selected language is saved in the visitor's browser (localStorage), and can be overridden using `?lang=ru` or `?lang=en`. Static UI strings are translated by `i18n.js`. For each newly approved project, provide both English and Russian fields: `title` / `title_ru`, `description` / `description_ru`, and optionally `category` / `category_ru`. Without a Russian field the English text is shown.
+
+The top-left avatar uses the public Telegram profile image when it can load. It shows the GitHub account avatar while checking and falls back to the letter H if both images fail. Telegram's public profile-photo endpoint is unofficial and may be blocked or delayed; true guaranteed Telegram photo synchronization would require an authenticated server-side integration and the appropriate Telegram permissions.
+
+## Repository privacy
+
+The repository is currently public. **Do not switch it to private without confirming GitHub Pages eligibility for the owner's plan** and understanding that a published Pages site is publicly accessible even when the source repository is private. If hiding source is essential, consider hosting a generated static build from a separate public deployment repository or another static host while keeping the source private.
