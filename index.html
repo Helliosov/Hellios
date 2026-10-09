@@ -112,13 +112,14 @@ body{animation:page-enter .8s ease both}
 @media(prefers-reduced-motion:reduce){.elyvar-preview-orb{animation:none}}
 
 .state-gallery.single-shot{grid-template-columns:1fr}.state-gallery.single-shot .state-shot img{height:auto;max-height:480px;object-fit:contain}.elyvar-real-shot{display:flex;flex-direction:column;min-width:0;border:1px solid #c1adff38;border-radius:12px;overflow:hidden;background:#080c16;box-shadow:0 14px 30px #0005;position:relative;z-index:2;transition:transform .3s,border-color .3s}.elyvar-real-shot:hover{transform:translateY(-4px);border-color:#b59df477}.elyvar-real-shot img{width:100%;height:260px;object-fit:contain;object-position:center;display:block;background:#080c16}.elyvar-project .project-content{margin-top:0}@media(max-width:720px){.elyvar-real-shot img{height:auto;max-height:340px}}
+.lang-switch{display:inline-flex;align-items:center;padding:3px;gap:2px;border:1px solid var(--line);background:rgba(186,214,247,.05);border-radius:999px;flex:none}.lang-btn{border:0;background:transparent;color:#aebed1;border-radius:999px;padding:8px 11px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.04em;cursor:pointer;transition:background .2s,color .2s}.lang-btn[aria-pressed="true"]{background:#663af3;color:#fff;box-shadow:0 3px 12px #663af333}.lang-btn:focus-visible{outline:2px solid #d8ecf8;outline-offset:2px}@media(max-width:480px){.nav{gap:8px}.lang-btn{padding:7px 9px}.nav .pill{padding:10px 12px}}
 </style>
 </head>
 <body>
 <div class="grid-bg" aria-hidden="true"></div><div class="progress-track" id="reading-progress" aria-hidden="true"></div>
 <header class="site-header shell">
-<a class="logo" href="#top" aria-label="HELLIOS home"><span class="logo-mark telegram-avatar"><img id="telegram-avatar" src="https://t.me/i/userpic/320/sru58xfzpmq.jpg" alt="HELLIOS Telegram profile avatar" referrerpolicy="no-referrer" decoding="async" onerror="this.style.display=&#39;none&#39;;this.nextElementSibling.style.display=&#39;grid&#39;"><span class="avatar-fallback" aria-hidden="true">H</span></span>HELLIOS</a>
-<nav class="nav" aria-label="Main navigation"><a href="#work">Work</a><a href="#services">Expertise</a><a href="#about">About</a><a class="pill" href="https://t.me/sru58xfzpmq" target="_blank" rel="noopener noreferrer">Let's talk <span class="arrow">↗</span></a></nav>
+<a class="logo" href="#top" aria-label="HELLIOS home"><span class="logo-mark telegram-avatar"><img id="telegram-avatar" src="https://avatars.githubusercontent.com/u/263466763?v=4" alt="HELLIOS profile avatar" referrerpolicy="no-referrer" decoding="async"><span class="avatar-fallback" aria-hidden="true">H</span></span>HELLIOS</a>
+<nav class="nav" aria-label="Main navigation"><a href="#work">Work</a><a href="#services">Expertise</a><a href="#about">About</a><div class="lang-switch" role="group" aria-label="Language / Язык"><button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button><button type="button" class="lang-btn" data-lang="ru" aria-pressed="false">RU</button></div><a class="pill" href="https://t.me/sru58xfzpmq" target="_blank" rel="noopener noreferrer">Let's talk <span class="arrow">↗</span></a></nav>
 </header>
 <main id="top">
 <section class="hero shell">
@@ -180,4 +181,6 @@ if(demo){demo.muted=true;demo.defaultMuted=true;demo.setAttribute("muted","");
  else demo.play().catch(()=>{});
 }
 </script>
+<script src="portfolio.js" defer></script>
+<script src="i18n.js" defer></script>
 </body></html>
