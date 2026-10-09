@@ -20,17 +20,26 @@
       meta.className = 'project-meta mono';
       const category = document.createElement('span');
       category.textContent = (typeof project.category === 'string' ? project.category : 'SOFTWARE').slice(0, 65);
+      category.dataset.i18nEn = category.textContent;
+      category.dataset.i18nRu = (typeof project.category_ru === 'string' ? project.category_ru : category.textContent).slice(0, 65);
       const status = document.createElement('span');
       status.className = 'status';
       status.textContent = statuses.has(project.status) ? project.status : 'PROTOTYPE';
       if (status.textContent === 'WORKING PROJECT' || status.textContent === 'COMPLETED') status.classList.add('live');
+      status.dataset.i18nEn = status.textContent;
+      const statusRu = { 'WORKING PROJECT': 'РАБОТАЮЩИЙ ПРОЕКТ', 'COMPLETED': 'ЗАВЕРШЁН', 'PROTOTYPE': 'ПРОТОТИП', 'DEMO': 'ДЕМО', 'IN PROGRESS': 'В РАЗРАБОТКЕ' };
+      status.dataset.i18nRu = statusRu[status.textContent] || status.textContent;
       meta.append(category, status);
       const content = document.createElement('div');
       content.className = 'project-content';
       const title = document.createElement('h3');
       title.textContent = project.title.slice(0, 100);
+      title.dataset.i18nEn = title.textContent;
+      title.dataset.i18nRu = (typeof project.title_ru === 'string' ? project.title_ru : title.textContent).slice(0, 100);
       const description = document.createElement('p');
       description.textContent = project.description.slice(0, 800);
+      description.dataset.i18nEn = description.textContent;
+      description.dataset.i18nRu = (typeof project.description_ru === 'string' ? project.description_ru : description.textContent).slice(0, 800);
       content.append(title, description);
       if (Array.isArray(project.stack)) {
         const tags = document.createElement('div');
@@ -59,6 +68,7 @@
       card.append(content);
       grid.append(card);
     }
+    window.dispatchEvent(new Event('hellios:projects-loaded'));
   } catch (error) {
     console.warn('HELLIOS: project catalog could not be loaded', error);
   }
