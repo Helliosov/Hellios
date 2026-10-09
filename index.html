@@ -112,6 +112,9 @@ body{animation:page-enter .8s ease both}
 @media(prefers-reduced-motion:reduce){.elyvar-preview-orb{animation:none}}
 
 .state-gallery.single-shot{grid-template-columns:1fr}.state-gallery.single-shot .state-shot img{height:auto;max-height:480px;object-fit:contain}.elyvar-real-shot{display:flex;flex-direction:column;min-width:0;border:1px solid #c1adff38;border-radius:12px;overflow:hidden;background:#080c16;box-shadow:0 14px 30px #0005;position:relative;z-index:2;transition:transform .3s,border-color .3s}.elyvar-real-shot:hover{transform:translateY(-4px);border-color:#b59df477}.elyvar-real-shot img{width:100%;height:260px;object-fit:contain;object-position:center;display:block;background:#080c16}.elyvar-project .project-content{margin-top:0}@media(max-width:720px){.elyvar-real-shot img{height:auto;max-height:340px}}
+
+/* Approved portfolio catalog cards */
+.catalog-project{min-height:360px;gap:16px}.catalog-project .project-content{position:relative;z-index:1}.catalog-project .media-wrap{margin:16px 0 4px}.catalog-project .media-wrap img{width:100%;aspect-ratio:16/9;max-height:300px;object-fit:cover}.catalog-project h3{font-size:clamp(27px,3vw,40px)}.catalog-link{display:inline-flex;margin-top:20px;font-size:12px;color:#d5e7ff;border-bottom:1px solid #9dc1ed80;padding-bottom:5px}.catalog-link:hover{color:#fff;border-color:#fff}
 </style>
 </head>
 <body>
@@ -156,6 +159,7 @@ body{animation:page-enter .8s ease both}
 <section class="shell" id="contact"><div class="contact glass reveal"><div class="section-label">04 / Contact</div><h2>Let's build something<br>worth using.</h2><p>Have a project in mind? Share the scope, features and timeline.<br>Let's figure out the right approach.</p><a class="pill primary" href="https://t.me/sru58xfzpmq" target="_blank" rel="noopener noreferrer">Message on Telegram <span class="arrow">↗</span></a><span class="handle mono">@sru58xfzpmq</span></div></section>
 </main>
 <footer class="site-footer shell mono"><span>© <span id="year">2026</span> HELLIOS. BUILT WITH INTENT.</span><a href="https://github.com/Helliosov" target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href="#top">BACK TO TOP ↑</a></footer>
+<script src="portfolio.js" defer></script>
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
 const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
