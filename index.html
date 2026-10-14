@@ -2,185 +2,144 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#05060f">
-<meta name="description" content="HELLIOS — custom software, web dashboards, bots and AI automation.">
-<meta property="og:title" content="HELLIOS — Software & Automation">
-<meta property="og:description" content="Ideas into working systems. Explore our selected work and services.">
-<title>HELLIOS — Software & Automation</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="HELLIOS — software systems, bots, web applications and intelligent automation. Selected work and case studies.">
+<meta property="og:title" content="HELLIOS — Independent Software Studio">
+<meta property="og:description" content="Software. Systems. Built with intent. Explore selected work.">
+<meta property="og:type" content="website">
+<title>HELLIOS — Independent Software Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#05060f;--ice:#d8ecf8;--blue:#98c0ef;--text:#d1e4fa;--muted:#9da7ba;--line:rgba(186,215,247,.12);--violet:#663af3;--panel:rgba(186,214,247,.035)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}a{text-decoration:none;color:inherit}button{font:inherit}::selection{background:#96bbec;color:#060713}
-body:before{content:"";position:absolute;inset:0 0 auto;height:1150px;pointer-events:none;background:radial-gradient(ellipse 46% 33% at 50% 19%,rgba(103,126,174,.21),transparent 76%),radial-gradient(ellipse 32% 27% at 72% 37%,rgba(80,65,145,.10),transparent 85%);z-index:-1}
-.grid-bg{position:absolute;z-index:-2;top:0;left:0;right:0;height:1170px;background-image:linear-gradient(to right,rgba(186,215,247,.05) 1px,transparent 1px),linear-gradient(to bottom,rgba(186,215,247,.05) 1px,transparent 1px);background-size:86px 86px;mask-image:linear-gradient(to bottom,black,transparent 98%);pointer-events:none}
-.shell{width:min(1180px,calc(100% - 48px));margin-inline:auto}.mono{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em}.site-header{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding-top:28px;gap:16px}.logo{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:20px;letter-spacing:.12em;color:#e3f0ff}.logo-mark{width:27px;height:27px;display:grid;place-items:center;border:1px solid #c0d9f266;transform:rotate(45deg);border-radius:6px;box-shadow:0 0 22px #8faedd25,inset 0 0 12px #d8ecf81a}.logo-mark span{transform:rotate(-45deg);font-size:16px;font-weight:500;line-height:1}.nav{display:flex;align-items:center;gap:32px}.nav>a:not(.pill){font-size:12px;color:#aebed1;transition:color .2s}.nav>a:hover{color:white}.pill{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:13px 19px;border-radius:999px;background:rgba(186,214,247,.06);box-shadow:inset 0 0 0 1px var(--line),inset 0 1px 1px rgba(216,236,248,.14),0 12px 28px #0002;color:#f4f9ff;font-size:12px;font-weight:500;transition:background .2s,transform .2s,box-shadow .2s;white-space:nowrap}.pill:hover{background:rgba(186,214,247,.13);transform:translateY(-2px);box-shadow:inset 0 0 0 1px rgba(216,236,248,.3),0 10px 30px #9cbbea18}.pill.primary{background:#663af3;box-shadow:0 8px 35px #663af344,inset 0 1px 1px #ffffff35}.pill.primary:hover{background:#7751f8}.arrow{font-size:15px}
-.hero{position:relative;text-align:center;min-height:850px;padding-top:145px;isolation:isolate}.hero:before{content:"";position:absolute;z-index:-1;left:50%;top:45px;transform:translateX(-50%);width:min(930px,100%);height:560px;background:radial-gradient(ellipse at center,rgba(145,170,217,.14),rgba(112,138,191,.04) 45%,transparent 70%);filter:blur(30px);pointer-events:none}.eyebrow{display:flex;align-items:center;justify-content:center;gap:20px;color:#c7d3ea;font-family:"JetBrains Mono",monospace;letter-spacing:.18em;font-size:11px;text-transform:uppercase}.eyebrow:before,.eyebrow:after{content:"";width:65px;height:1px;background:linear-gradient(90deg,transparent,rgba(186,215,247,.25))}.eyebrow:after{transform:rotate(180deg)}.hero-title{font-family:"Space Grotesk",sans-serif;font-size:clamp(90px,16vw,210px);font-weight:500;letter-spacing:-.092em;line-height:.95;margin:48px auto 24px;padding-right:.08em;background:linear-gradient(180deg,#fff 0%,#d8ecf8 35%,#98c0ef 95%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 16px 80px rgba(160,200,255,.12)}.hero-subtitle{font-family:"Space Grotesk",sans-serif;font-weight:400;font-size:clamp(20px,2.5vw,31px);letter-spacing:-.035em;color:#e5f0fc;margin:0}.hero-desc{max-width:510px;margin:21px auto 27px;color:#aab9cf;line-height:1.9;font-size:13px}.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.hero-orbit{position:absolute;left:50%;top:335px;transform:translateX(-50%);width:min(1060px,100%);height:380px;z-index:-1;border:1px solid rgba(186,215,247,.06);border-radius:50%;filter:drop-shadow(0 0 30px #a9c6ff16);pointer-events:none}.glass{background:linear-gradient(145deg,rgba(186,214,247,.065),rgba(186,214,247,.018) 70%);border:1px solid rgba(186,215,247,.105);box-shadow:inset 0 1px 1px rgba(216,236,248,.2),inset 0 25px 50px rgba(168,216,245,.025),0 20px 70px rgba(0,0,0,.2);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:16px}.floating{position:absolute;display:flex;align-items:center;gap:12px;padding:15px 18px;text-align:left;pointer-events:none;animation:float 7s ease-in-out infinite}.floating.one{left:3%;top:240px;transform:rotate(-7deg)}.floating.two{right:1%;top:370px;animation-delay:-3s}.floating.three{left:10%;top:560px;animation-delay:-5s}.float-icon{width:35px;height:35px;display:grid;place-items:center;border-radius:10px;background:rgba(216,236,248,.08);font-size:16px;color:#d8ecf8}.floating strong{display:block;font-size:11px;color:#e8f2fc;font-weight:500}.floating small{display:block;margin-top:5px;font-size:9px;color:#a8b7c9}.float-dot{height:6px;width:6px;border-radius:50%;background:#a4e2d7;box-shadow:0 0 10px #a4e2d7}
-@keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}
-.hero-footer{display:flex;align-items:center;justify-content:space-between;margin-top:215px;padding:25px 0;border-top:1px solid var(--line);color:#91a2b8}.hero-footer span{font-size:10px}.hero-footer .scroll{display:flex;gap:10px;align-items:center}
-.section{padding:105px 0 115px}.section-label{display:flex;align-items:center;justify-content:center;gap:20px;text-align:center;color:#b9cde2;font-size:11px;font-family:"JetBrains Mono",monospace;letter-spacing:.16em;text-transform:uppercase}.section-label:before,.section-label:after{content:"";height:1px;max-width:115px;width:15%;background:linear-gradient(90deg,transparent,var(--line))}.section-label:after{transform:rotate(180deg)}.section-title{font-family:"Space Grotesk",sans-serif;font-weight:500;letter-spacing:-.045em;font-size:clamp(38px,5vw,59px);text-align:center;margin:24px 0 15px;background:linear-gradient(180deg,#f4f9ff,#a3c2e8);-webkit-background-clip:text;background-clip:text;color:transparent}.section-intro{text-align:center;font-size:13px;line-height:1.9;color:var(--muted);max-width:550px;margin:0 auto 50px}.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.project{padding:30px;min-height:360px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;transition:transform .25s,border-color .25s}.project:hover{transform:translateY(-5px);border-color:rgba(186,215,247,.3)}.project.feature{grid-column:span 2;min-height:390px}.project:after{content:"";position:absolute;width:440px;height:280px;right:-120px;top:-140px;background:radial-gradient(ellipse,rgba(127,158,211,.13),transparent 72%);pointer-events:none}.project:nth-child(2):after{background:radial-gradient(ellipse,rgba(100,75,165,.14),transparent 72%)}.project:nth-child(3):after{background:radial-gradient(ellipse,rgba(94,149,158,.1),transparent 72%)}.project-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:10px;color:#9daec4}.status{border:1px solid var(--line);border-radius:6px;padding:8px 10px;color:#c4d4e7;font-size:9px;white-space:nowrap}.status.live{color:#b3e2d5}.project-content{position:relative;z-index:1}.project h3{font-family:"Space Grotesk",sans-serif;font-weight:500;letter-spacing:-.04em;font-size:clamp(32px,4vw,53px);margin:0 0 15px;color:#e7f1fd}.project p{font-size:13px;color:#a9b9cd;line-height:1.9;max-width:610px}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:23px}.tags span{font-family:"JetBrains Mono",monospace;font-size:10px;color:#bcd0e5;background:rgba(199,211,234,.08);box-shadow:inset 0 0 0 1px rgba(186,215,247,.07);padding:8px 10px;border-radius:6px}.project-decoration{position:absolute;top:75px;right:10%;font-family:"Space Grotesk",sans-serif;font-size:180px;font-weight:500;color:rgba(189,214,250,.045);letter-spacing:-.1em;user-select:none}
-.services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.service{padding:26px;min-height:270px;transition:transform .2s}.service:hover{transform:translateY(-4px)}.service-icon{height:52px;width:52px;display:grid;place-items:center;border-radius:50%;background:rgba(186,214,247,.07);box-shadow:inset 0 0 0 1px var(--line),0 0 35px #a5c9ff10;color:#d9eafa;font-size:21px}.service h3{font-family:"Space Grotesk",sans-serif;font-size:19px;font-weight:500;letter-spacing:-.025em;margin:38px 0 12px}.service p{font-size:12px;line-height:1.9;color:#9da7ba;margin:0}.tech{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:44px}.tech span{font-family:"JetBrains Mono",monospace;font-size:11px;color:#b6c8de;padding:10px 14px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);background:rgba(186,214,247,.03)}
-.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}.about-panel{padding:36px}.about-panel h3{font-family:"Space Grotesk",sans-serif;font-size:34px;font-weight:500;letter-spacing:-.05em;margin:12px 0 20px}.about-panel p{font-size:13px;line-height:2;color:#aebbd0}.about-panel .mono{color:#98c0ef}.process{display:grid;gap:10px}.process-row{display:flex;align-items:center;gap:18px;padding:17px 0;border-bottom:1px solid var(--line);font-size:14px;color:#d2e3f7}.process-row:last-child{border:0}.process-row span{font-size:10px;color:#92a9c4}.contact{margin:40px auto 115px;padding:80px 30px;text-align:center;position:relative;overflow:hidden}.contact:before{content:"";position:absolute;left:50%;top:-250px;transform:translateX(-50%);width:650px;height:500px;background:radial-gradient(ellipse,rgba(122,151,206,.17),transparent 72%);pointer-events:none}.contact h2{position:relative;font-family:"Space Grotesk",sans-serif;font-size:clamp(42px,6vw,70px);font-weight:500;letter-spacing:-.055em;line-height:1.1;margin:20px auto;background:linear-gradient(180deg,#fff,#9dc1ed);background-clip:text;-webkit-background-clip:text;color:transparent}.contact p{position:relative;font-size:13px;color:#a9b9cd;line-height:1.9}.contact .pill{position:relative;margin-top:20px}.contact .handle{display:block;margin-top:22px;font-size:11px;color:#a8bad1}.site-footer{border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:15px;padding:28px 0 40px;font-size:10px;color:#8195ad}.site-footer a:hover{color:white}.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
-@media(max-width:960px){.floating.one{left:0}.floating.two{right:0}.floating.three{left:3%}.services{grid-template-columns:repeat(2,1fr)}.hero-title{font-size:clamp(90px,15vw,165px)}}
-@media(max-width:720px){.nav>a:not(.pill){display:none}.hero{padding-top:120px;min-height:750px}.hero-title{font-size:clamp(64px,16vw,112px);margin-top:56px}.floating{display:none}.hero-footer{margin-top:180px}.project-grid{grid-template-columns:1fr}.project.feature{grid-column:auto}.project{min-height:335px}.about-grid{grid-template-columns:1fr}.section{padding:85px 0}.hero-orbit{top:290px;height:240px}}
-@media(max-width:480px){.shell{width:calc(100% - 34px)}.site-header{padding-top:20px}.logo{font-size:16px}.nav .pill{padding:11px 13px;font-size:10px}.hero{padding-top:100px;min-height:650px}.hero-title{font-size:clamp(57px,15.5vw,80px);letter-spacing:-.09em}.hero-desc{font-size:12px}.hero-subtitle{font-size:20px}.hero-footer{margin-top:125px}.hero-footer span{font-size:9px}.section-title{font-size:38px}.project{padding:23px}.services{grid-template-columns:1fr}.service{min-height:210px}.service h3{margin-top:23px}.contact{padding:65px 20px;margin-bottom:70px}.eyebrow{font-size:9px;gap:10px}.eyebrow:before,.eyebrow:after{width:28px}.site-footer{flex-wrap:wrap}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.floating{animation:none}.reveal{opacity:1;transform:none;transition:none}.pill,.project,.service{transition:none}}
-
-/* Motion and real project media */
-@property --glow-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
-body{animation:page-enter .8s ease both}
-@keyframes page-enter{from{opacity:0}to{opacity:1}}
-.logo-mark{animation:mark-breathe 5s ease-in-out infinite}
-@keyframes mark-breathe{0%,100%{box-shadow:0 0 20px #8faedd25,inset 0 0 12px #d8ecf81a}50%{box-shadow:0 0 42px #9dc4ff55,inset 0 0 19px #d8ecf84b}}
-.hero-title{animation:title-appear 1.2s cubic-bezier(.2,.7,.1,1) both, title-glow 7s ease-in-out infinite alternate}
-@keyframes title-appear{from{opacity:0;filter:blur(14px);transform:translateY(38px) scale(.97)}to{opacity:1;filter:blur(0);transform:none}}
-@keyframes title-glow{from{filter:drop-shadow(0 0 12px #9fc9ff12)}to{filter:drop-shadow(0 0 40px #9fc9ff4a)}}
-.hero-subtitle,.hero-desc,.hero-actions{animation:rise-in .9s both}
-.hero-subtitle{animation-delay:.22s}.hero-desc{animation-delay:.38s}.hero-actions{animation-delay:.54s}
-@keyframes rise-in{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
-.grid-bg{animation:grid-drift 28s linear infinite alternate}
-@keyframes grid-drift{to{background-position:43px 86px}}
-.hero-orbit{animation:orbit-breathe 9s ease-in-out infinite}
-@keyframes orbit-breathe{50%{opacity:.45;scale:1.04}}
-.project{--mx:50%;--my:50%;transform-style:preserve-3d;will-change:transform}
-.project:before,.service:before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(158,193,255,.13),transparent 70%);opacity:0;transition:opacity .25s;z-index:0}
-.project:hover:before,.service:hover:before{opacity:1}
-.service{position:relative;overflow:hidden}
-.service-icon{transition:transform .45s,box-shadow .45s}
-.service:hover .service-icon{transform:rotate(-12deg) scale(1.1);box-shadow:0 0 32px #a5c9ff2b,inset 0 0 0 1px var(--line)}
-.tech span{transition:transform .25s,background .25s}.tech span:hover{transform:translateY(-5px);background:#d0e7ff18}
-.project .media-wrap{position:relative;z-index:1;margin:24px 0 20px;border-radius:13px;overflow:hidden;background:#0b1020;border:1px solid rgba(190,215,255,.19);box-shadow:0 18px 50px #0007,0 0 30px #9ec9ff0d}
-.project .media-wrap img,.project .media-wrap video{display:block;width:100%;height:auto;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s}
-.project .media-wrap img{max-height:310px;object-position:top}
-.project:hover .media-wrap img{transform:scale(1.025)}
-.project .media-wrap video{aspect-ratio:16/9;object-fit:cover;max-height:340px}
-.project .media-wrap:after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px #ffffff0d;pointer-events:none}
-.media-caption{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 15px;color:#a9c5e6;font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.07em;background:#0a0d19}
-.media-caption .live-indicator{display:inline-flex;align-items:center;gap:7px;color:#a8e2d8}
-.live-indicator:before{content:"";width:6px;height:6px;background:#a8e2d8;border-radius:50%;box-shadow:0 0 10px #a8e2d8;animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{50%{opacity:.4;box-shadow:0 0 18px #a8e2d8}}
-.project.feature{min-height:unset}
-.project.feature .project-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:center;gap:30px;margin-top:25px}
-.project.feature .media-wrap{margin:0}
-.project.ai-demo{grid-column:span 2;min-height:unset}
-.project.ai-demo .project-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:center;gap:30px;margin-top:25px}
-.project.ai-demo .media-wrap{margin:0}
-.project .media-wrap video::-webkit-media-controls-panel{background:linear-gradient(transparent,#070b18b5)}
-.project .media-wrap video:focus-visible{outline:2px solid #c9e3ff;outline-offset:-2px}
-.project-image-overlay{position:absolute;right:18px;top:18px;padding:7px 11px;border-radius:8px;background:#0a1020aa;backdrop-filter:blur(8px);color:#d3e7ff;font-size:9px;letter-spacing:.08em;pointer-events:none}
-.progress-track{position:fixed;top:0;left:0;height:2px;width:100%;background:linear-gradient(90deg,#86aef5,#e0efff);transform-origin:left;transform:scaleX(0);z-index:100;pointer-events:none}
-.reveal{transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1);transition-delay:var(--reveal-delay,0ms)}
-.project-detail-shot{position:absolute;right:16px;bottom:54px;width:24%!important;height:auto!important;max-height:160px!important;object-fit:contain!important;background:#0c1020;padding:6px;border:1px solid #c5dcff33;border-radius:10px;box-shadow:0 10px 30px #000b;z-index:2;transition:transform .3s}.project:hover .project-detail-shot{transform:translateY(-5px) rotate(1deg)}
-@media(max-width:820px){.project.feature .project-content,.project.ai-demo .project-content{grid-template-columns:1fr}.project.ai-demo{grid-column:span 1}.project.feature .media-wrap,.project.ai-demo .media-wrap{margin-top:8px}}
-@media(max-width:480px){.project .media-wrap img{max-height:200px}.media-caption{font-size:8px}.project .media-wrap video{max-height:260px}}
-@media(prefers-reduced-motion:reduce){body,.logo-mark,.hero-title,.hero-subtitle,.hero-desc,.hero-actions,.grid-bg,.hero-orbit,.live-indicator:before{animation:none!important}.reveal{transition:none!important;opacity:1!important;transform:none!important}.project,.service{will-change:auto}.project .media-wrap img{transition:none!important}}
-
-.telegram-avatar{width:34px;height:34px;transform:none;border-radius:50%;overflow:hidden;position:relative;flex:none;box-shadow:0 0 0 1px #c0d9f266,0 0 20px #9fc9ff22;animation:avatar-halo 5s ease-in-out infinite}.telegram-avatar img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;transition:transform .35s ease}.logo:hover .telegram-avatar img{transform:scale(1.12)}.telegram-avatar .avatar-fallback{display:none;position:absolute;inset:0;place-items:center;font-size:16px;font-weight:600;color:#e3f0ff;background:#1a2035}@keyframes avatar-halo{50%{box-shadow:0 0 0 1px #c0d9f299,0 0 30px #9fc9ff66}}@media(prefers-reduced-motion:reduce){.telegram-avatar{animation:none}}
-
-/* Gallery redesign: show real screenshots without cropping or overlays */
-.state-project{display:block;padding:32px!important;min-height:0!important}
-.state-project:after,.state-project .project-decoration{display:none}
-.state-project-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;margin:30px 0 27px}
-.state-project-heading h3{font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:clamp(30px,4vw,48px);letter-spacing:-.045em;margin:0 0 12px;color:#e7f1fd}
-.state-project-heading p{max-width:610px;color:#a9b9cd;line-height:1.8;font-size:13px;margin:0}
-.state-project-heading .tags{margin:0;justify-content:flex-end;max-width:310px;flex:none}
-.state-gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;position:relative;z-index:2}
-.state-shot{display:flex;flex-direction:column;min-width:0;border:1px solid #bdd6ff24;border-radius:12px;overflow:hidden;background:#080c16;box-shadow:0 14px 30px #0005;transition:transform .3s,border-color .3s,box-shadow .3s}
-.state-shot:hover{transform:translateY(-5px);border-color:#bdd6ff66;box-shadow:0 22px 45px #0008,0 0 25px #a5c9ff15}
-.browser-top{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;background:#111626;border-bottom:1px solid #bdd6ff16;font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.06em;color:#a3bad5}
-.browser-dots{display:flex;gap:5px}.browser-dots i{width:6px;height:6px;border-radius:50%;background:#91a7c1}.browser-dots i:first-child{background:#ce8298}.browser-dots i:nth-child(2){background:#c7b77b}
-.state-shot img{display:block;width:100%;height:260px;object-fit:contain;object-position:center;background:#070b15;transition:transform .4s}
-.state-shot:hover img{transform:scale(1.015)}
-.shot-footer{display:flex;justify-content:space-between;padding:12px 14px;background:#101626;color:#c0d7f3;font-size:9px}
-.elyvar-project{min-height:unset;display:flex;flex-direction:column;gap:22px}
-.elyvar-project .project-content{margin-top:auto}
-.elyvar-project h3{font-size:38px}
-.elyvar-preview{height:300px;overflow:hidden;position:relative;border:1px solid #c1adff38;border-radius:12px;background:radial-gradient(circle at 75% 55%,#7a39d96b,transparent 48%),linear-gradient(130deg,#141022,#070812 80%);padding:20px;color:#f0e7ff;isolation:isolate}
-.elyvar-preview-top{position:relative;z-index:2;display:flex;align-items:center;gap:8px;font-family:"Space Grotesk",sans-serif;font-size:14px;letter-spacing:.08em}
-.elyvar-icon{font-size:25px;color:#b69bff}.elyvar-ui-label{margin-left:auto;font-family:"JetBrains Mono",monospace;font-size:8px;letter-spacing:.08em;color:#bdb1d7;border:1px solid #ffffff26;border-radius:5px;padding:6px}
-.elyvar-preview-content{position:relative;z-index:2;margin-top:35px}
-.elyvar-ui-eyebrow{font-family:"JetBrains Mono",monospace;font-size:8px;letter-spacing:.16em;color:#c4a9fc}
-.elyvar-preview-headline{font-family:"Space Grotesk",sans-serif;font-size:clamp(28px,3.5vw,44px);font-weight:500;line-height:1.1;letter-spacing:-.05em;margin-top:12px}.elyvar-preview-headline em{font-style:normal;color:#b69bff}
-.elyvar-preview-sub{font-size:10px;color:#b7a9cc;margin-top:12px}.elyvar-ui-cta{display:inline-flex;font-family:"JetBrains Mono",monospace;font-size:8px;margin-top:17px;padding:9px 12px;background:#9a74e9;border-radius:6px;color:#fff}
-.elyvar-preview-orb{position:absolute;right:-25px;bottom:-75px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle at 35% 28%,#e6c4ff,#9e63f5 26%,#5424ac 56%,#1c103e 72%);box-shadow:0 0 90px #ac76f76b,inset -20px -25px 50px #1b0a40;transform:rotate(-20deg);animation:elyvar-float 8s ease-in-out infinite;z-index:1}
-.elyvar-preview-orb:after{content:"";position:absolute;inset:-18px;border:1px solid #b695ff44;border-radius:50%;transform:rotateX(60deg)}
-@keyframes elyvar-float{50%{transform:translateY(-14px) rotate(12deg)}}
-@media(max-width:960px){.state-project-heading{display:block}.state-project-heading .tags{justify-content:flex-start;max-width:none;margin-top:18px}}
-@media(max-width:720px){.state-gallery{grid-template-columns:1fr}.state-shot img{height:auto;max-height:340px;min-height:170px}.state-project{padding:22px!important}.elyvar-preview{height:280px}}
-@media(prefers-reduced-motion:reduce){.elyvar-preview-orb{animation:none}}
-
-.state-gallery.single-shot{grid-template-columns:1fr}.state-gallery.single-shot .state-shot img{height:auto;max-height:480px;object-fit:contain}.elyvar-real-shot{display:flex;flex-direction:column;min-width:0;border:1px solid #c1adff38;border-radius:12px;overflow:hidden;background:#080c16;box-shadow:0 14px 30px #0005;position:relative;z-index:2;transition:transform .3s,border-color .3s}.elyvar-real-shot:hover{transform:translateY(-4px);border-color:#b59df477}.elyvar-real-shot img{width:100%;height:260px;object-fit:contain;object-position:center;display:block;background:#080c16}.elyvar-project .project-content{margin-top:0}@media(max-width:720px){.elyvar-real-shot img{height:auto;max-height:340px}}
-.lang-switch{display:inline-flex;align-items:center;padding:3px;gap:2px;border:1px solid var(--line);background:rgba(186,214,247,.05);border-radius:999px;flex:none}.lang-btn{border:0;background:transparent;color:#aebed1;border-radius:999px;padding:8px 11px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.04em;cursor:pointer;transition:background .2s,color .2s}.lang-btn[aria-pressed="true"]{background:#663af3;color:#fff;box-shadow:0 3px 12px #663af333}.lang-btn:focus-visible{outline:2px solid #d8ecf8;outline-offset:2px}@media(max-width:480px){.nav{gap:8px}.lang-btn{padding:7px 9px}.nav .pill{padding:10px 12px}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="noir.css?v=1">
 </head>
 <body>
-<div class="grid-bg" aria-hidden="true"></div><div class="progress-track" id="reading-progress" aria-hidden="true"></div>
+<div class="progress-track" id="reading-progress" aria-hidden="true"></div>
 <header class="site-header shell">
-<a class="logo" href="#top" aria-label="HELLIOS home"><span class="logo-mark telegram-avatar"><img id="telegram-avatar" src="https://avatars.githubusercontent.com/u/263466763?v=20261014" alt="HELLIOS profile avatar" referrerpolicy="no-referrer" decoding="async"><span class="avatar-fallback" aria-hidden="true">H</span></span>HELLIOS</a>
-<nav class="nav" aria-label="Main navigation"><a href="#work">Work</a><a href="#services">Expertise</a><a href="#about">About</a><div class="lang-switch" role="group" aria-label="Language / Язык"><button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button><button type="button" class="lang-btn" data-lang="ru" aria-pressed="false">RU</button></div><a class="pill" href="https://t.me/helliosweb" target="_blank" rel="noopener noreferrer">Let's talk <span class="arrow">↗</span></a></nav>
+  <a class="logo" href="#top" aria-label="HELLIOS home"><span class="logo-mark"><img id="telegram-avatar" src="https://avatars.githubusercontent.com/u/263466763?v=20261014" alt="HELLIOS avatar" referrerpolicy="no-referrer" decoding="async"><span class="avatar-fallback" aria-hidden="true">H</span></span>HELLIOS<span style="font-size:9px;color:#777;letter-spacing:0;margin-left:5px">®</span></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a class="nav-link" href="#work" data-en="WORK" data-ru="ПРОЕКТЫ">WORK</a>
+    <a class="nav-link" href="#services" data-en="EXPERTISE" data-ru="УСЛУГИ">EXPERTISE</a>
+    <a class="nav-link" href="#about" data-en="APPROACH" data-ru="ПОДХОД">APPROACH</a>
+    <div class="lang-switch" role="group" aria-label="Language / Язык"><button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button><button type="button" class="lang-btn" data-lang="ru" aria-pressed="false">RU</button></div>
+    <a class="nav-cta" href="https://t.me/helliosweb" target="_blank" rel="noopener noreferrer"><span data-en="LET'S TALK" data-ru="СВЯЗАТЬСЯ">LET'S TALK</span><span aria-hidden="true">↗</span></a>
+  </nav>
 </header>
 <main id="top">
-<section class="hero shell">
-<div class="eyebrow">Independent software development</div>
-<h1 class="hero-title">HELLIOS</h1>
-<h2 class="hero-subtitle">Ideas into working systems.</h2>
-<p class="hero-desc">We turn complex workflows into clean software — custom bots, web dashboards, API integrations and intelligent automation.</p>
-<div class="hero-actions"><a class="pill primary" href="https://t.me/helliosweb" target="_blank" rel="noopener noreferrer">Start a project <span class="arrow">↗</span></a><a class="pill" href="#work">Explore selected work <span class="arrow">↓</span></a></div>
-<div class="hero-orbit" aria-hidden="true"></div>
-<div class="glass floating one" aria-hidden="true"><span class="float-icon">⌘</span><div><strong>Custom systems</strong><small>Built around your workflow</small></div></div>
-<div class="glass floating two" aria-hidden="true"><span class="float-icon">↗</span><div><strong>API connected</strong><small>Services working together</small></div><span class="float-dot"></span></div>
-<div class="glass floating three" aria-hidden="true"><span class="float-icon">✧</span><div><strong>Intelligent automation</strong><small>Less manual work</small></div></div>
-<div class="hero-footer mono"><span>SOFTWARE / WEB / AUTOMATION</span><span class="scroll">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span><span>EST. DIGITAL-FIRST</span></div>
+<section class="hero shell" aria-labelledby="hero-title">
+  <div class="hero-top">
+    <span class="hero-index micro" data-en="INDEPENDENT SOFTWARE STUDIO / 2026" data-ru="НЕЗАВИСИМАЯ СТУДИЯ РАЗРАБОТКИ / 2026">INDEPENDENT SOFTWARE STUDIO / 2026</span>
+    <p data-en="Building precise digital systems, interfaces and automations for real-world problems." data-ru="Создаём продуманные цифровые системы, интерфейсы и автоматизацию для реальных задач.">Building precise digital systems, interfaces and automations for real-world problems.</p>
+  </div>
+  <div class="hero-stage">
+    <div class="hero-visual" aria-hidden="true"><div class="orbit-line"></div><div class="orbit-line"></div><div class="orbit-core"></div></div>
+    <h1 id="hero-title" class="hero-title">HELLIOS</h1>
+    <div class="hero-subrow">
+      <div>
+        <h2 class="hero-subtitle"><span data-en="We engineer" data-ru="Создаём">We engineer</span><br><em data-en="the unseen." data-ru="то, что работает.">the unseen.</em></h2>
+        <div class="hero-actions"><a href="#work" class="text-link"><span data-en="DISCOVER OUR WORK" data-ru="СМОТРЕТЬ ПРОЕКТЫ">DISCOVER OUR WORK</span><span class="arrow" aria-hidden="true">↘</span></a></div>
+      </div>
+      <p class="hero-desc" data-en="From complex backend logic to the interface you touch. Every layer designed to work together." data-ru="От сложной серверной логики до интерфейса пользователя. Каждый элемент — часть единой работающей системы.">From complex backend logic to the interface you touch. Every layer designed to work together.</p>
+    </div>
+  </div>
+  <div class="hero-bottom micro"><span data-en="SOFTWARE / SYSTEMS / AUTOMATION" data-ru="РАЗРАБОТКА / СИСТЕМЫ / АВТОМАТИЗАЦИЯ">SOFTWARE / SYSTEMS / AUTOMATION</span><span data-en="SCROLL TO EXPLORE ↓" data-ru="ЛИСТАЙТЕ НИЖЕ ↓">SCROLL TO EXPLORE ↓</span><span>001 — 004</span></div>
 </section>
-<section class="section shell" id="work">
-<div class="section-label">01 / Selected work</div><h2 class="section-title reveal">Built to make things work.</h2><p class="section-intro reveal">A selection of working systems and experiments. Project status is clearly marked.</p>
-<div class="project-grid">
-<article class="project feature glass reveal state-project"><div class="project-meta mono"><span>01 / DISCORD INFRASTRUCTURE</span><span class="status live">WORKING PROJECT</span></div><div class="state-project-heading"><div><h3>State Kutuzovsky</h3><p>Multi-server Discord management system with a connected web panel. Curator workflows, appeals, moderation logs, activity analytics and permission-aware administration.</p></div><div class="tags"><span>TypeScript</span><span>discord.js</span><span>Next.js</span><span>Prisma</span><span>PostgreSQL</span></div></div><div class="state-gallery single-shot"><a class="state-shot" href="assets/state-showcase.svg" target="_blank" rel="noopener noreferrer" aria-label="Open State Kutuzovsky dashboard concept artwork"><div class="browser-top"><span class="browser-dots"><i></i><i></i><i></i></span><span>STATE / SHOWCASE</span><span>↗</span></div><img src="assets/state-showcase.svg" alt="State Kutuzovsky dashboard showcase artwork with server panels, moderation logs and analytics" loading="lazy" decoding="async"><div class="shot-footer mono">VIEW ARTWORK <span>↗</span></div></a></div></article>
-<article class="project glass reveal elyvar-project"><div class="project-meta mono"><span>02 / WEB3 INTERFACE</span><span class="status">PROTOTYPE</span></div><a class="elyvar-real-shot" href="assets/Снимок экрана 2026-10-08 234549.png" target="_blank" rel="noopener noreferrer" aria-label="Open actual ELYVAR project screenshot"><div class="browser-top"><span class="browser-dots"><i></i><i></i><i></i></span><span>ELYVAR / REAL SCREENSHOT</span><span>↗</span></div><img src="assets/Снимок экрана 2026-10-08 234549.png" alt="Real ELYVAR prototype interface screenshot" loading="lazy" decoding="async"><div class="shot-footer mono">VIEW SHOWCASE <span>↗</span></div></a><div class="project-content"><h3>ELYVAR</h3><p>Token-launch workflow concept with a responsive interface and mock API. Real blockchain execution is not implemented.</p><div class="tags"><span>React</span><span>Next.js</span><span>TypeScript</span></div></div></article>
-<article class="project glass reveal ai-demo"><div class="project-meta mono"><span>03 / AUTOMATION</span><span class="status">DEMO VIDEO</span></div><div class="project-content"><div><h3>AI Administrator</h3><p>AI-powered service workflow demonstration with Telegram messaging and automated request handling. Watch the workflow in action.</p><div class="tags"><span>n8n</span><span>Telegram</span><span>AI</span><span>Integrations</span></div></div><div class="media-wrap"><video autoplay muted loop playsinline controls preload="metadata" aria-label="AI Administrator demonstration video"><source src="assets/0911 (online-video-cutter.com).mp4" type="video/mp4">Your browser does not support HTML5 video.</video><div class="media-caption"><span>AI ADMINISTRATOR / WALKTHROUGH</span><span class="live-indicator">VIDEO DEMO</span></div></div></div></article>
-</div></section>
-<section class="section shell" id="services"><div class="section-label">02 / Expertise</div><h2 class="section-title reveal">Tools that move work forward.</h2><p class="section-intro reveal">From a focused feature to an integrated internal system, the goal is useful software that solves the actual problem.</p>
-<div class="services">
-<article class="service glass reveal"><div class="service-icon" aria-hidden="true">⌘</div><h3>Telegram & Discord bots</h3><p>Custom commands, moderation, notifications and workflow integrations.</p></article>
-<article class="service glass reveal"><div class="service-icon" aria-hidden="true">▤</div><h3>Web applications</h3><p>Dashboards, internal tools and responsive web interfaces.</p></article>
-<article class="service glass reveal"><div class="service-icon" aria-hidden="true">⟷</div><h3>API & backend</h3><p>Connected services, data flows, databases and backend features.</p></article>
-<article class="service glass reveal"><div class="service-icon" aria-hidden="true">✧</div><h3>AI automation</h3><p>Messaging, workflow orchestration and repetitive-task automation.</p></article>
-</div>
-<div class="tech reveal" aria-label="Technologies"><span>TypeScript</span><span>Node.js</span><span>React</span><span>Next.js</span><span>Python</span><span>PostgreSQL</span><span>Prisma</span><span>Docker</span><span>n8n</span></div>
+
+<section class="section work shell" id="work" aria-labelledby="work-heading">
+  <div class="section-head reveal">
+    <div class="section-index micro" data-en="01 / SELECTED WORK" data-ru="01 / ИЗБРАННЫЕ ПРОЕКТЫ">01 / SELECTED WORK</div>
+    <div><h2 class="section-heading" id="work-heading"><span data-en="Proof, not" data-ru="Не обещания.">Proof, not</span><br><span class="ghost" data-en="promises." data-ru="Разработки.">promises.</span></h2><p class="section-lede" data-en="Real interfaces, working systems and honest prototypes. Each project has its own story, stack and status." data-ru="Реальные интерфейсы, работающие системы и честно обозначенные прототипы. У каждого проекта — своя история, технологии и статус.">Real interfaces, working systems and honest prototypes. Each project has its own story, stack and status.</p></div>
+  </div>
+  <div class="case-list">
+    <article class="case reveal" aria-labelledby="case-state">
+      <span class="case-number micro">001 / 003</span>
+      <div class="case-info">
+        <div class="case-type micro" data-en="DISCORD INFRASTRUCTURE — MANAGEMENT SYSTEM" data-ru="DISCORD-ИНФРАСТРУКТУРА — СИСТЕМА УПРАВЛЕНИЯ">DISCORD INFRASTRUCTURE — MANAGEMENT SYSTEM</div>
+        <h3 id="case-state">State<br>Kutuzovsky</h3>
+        <p class="case-desc" data-en="A connected bot and dashboard for moderation, curator operations, appeals and server activity." data-ru="Связанные бот и веб-панель для модерации, работы кураторов, обращений и активности серверов.">A connected bot and dashboard for moderation, curator operations, appeals and server activity.</p>
+        <div class="case-stack"><span>TypeScript</span><span>discord.js</span><span>Next.js</span><span>PostgreSQL</span></div>
+        <button type="button" class="case-link" data-case="state"><span data-en="EXPLORE CASE" data-ru="ОТКРЫТЬ КЕЙС">EXPLORE CASE</span><span class="arrow" aria-hidden="true">↗</span></button>
+        <div class="status working micro" data-en="WORKING PROJECT" data-ru="РАБОТАЮЩИЙ ПРОЕКТ">WORKING PROJECT</div>
+      </div>
+      <div class="case-media"><img src="assets/state-showcase.svg" alt="State Kutuzovsky dashboard presentation artwork" data-alt-en="State Kutuzovsky dashboard presentation artwork" data-alt-ru="Презентационная иллюстрация панели State Kutuzovsky" loading="lazy" decoding="async"><span class="media-index">HELLIOS / 001</span><span class="media-label" data-en="SHOWCASE ARTWORK · NOT A SCREENSHOT" data-ru="ПРЕЗЕНТАЦИОННАЯ ИЛЛЮСТРАЦИЯ · НЕ СКРИНШОТ">SHOWCASE ARTWORK · NOT A SCREENSHOT</span></div>
+    </article>
+    <article class="case reveal" aria-labelledby="case-elyvar">
+      <span class="case-number micro">002 / 003</span>
+      <div class="case-info">
+        <div class="case-type micro" data-en="WEB3 — INTERFACE & MONITORING" data-ru="WEB3 — ИНТЕРФЕЙС И МОНИТОРИНГ">WEB3 — INTERFACE & MONITORING</div>
+        <h3 id="case-elyvar">ELYVAR</h3>
+        <p class="case-desc" data-en="A responsive token-monitoring experience built around live-oriented states, metadata and clear presentation." data-ru="Адаптивный интерфейс мониторинга токенов со статусами, метаданными и понятной визуализацией.">A responsive token-monitoring experience built around live-oriented states, metadata and clear presentation.</p>
+        <div class="case-stack"><span>React</span><span>Next.js</span><span>TypeScript</span><span>API</span></div>
+        <button type="button" class="case-link" data-case="elyvar"><span data-en="EXPLORE CASE" data-ru="ОТКРЫТЬ КЕЙС">EXPLORE CASE</span><span class="arrow" aria-hidden="true">↗</span></button>
+        <div class="status micro" data-en="PROTOTYPE" data-ru="ПРОТОТИП">PROTOTYPE</div>
+      </div>
+      <div class="case-media"><img src="assets/Снимок экрана 2026-10-08 234549.png" alt="Actual ELYVAR interface screenshot" data-alt-en="Actual ELYVAR interface screenshot" data-alt-ru="Реальный скриншот интерфейса ELYVAR" loading="lazy" decoding="async"><span class="media-index">HELLIOS / 002</span><span class="media-label" data-en="REAL PROJECT SCREENSHOT" data-ru="РЕАЛЬНЫЙ СКРИНШОТ ПРОЕКТА">REAL PROJECT SCREENSHOT</span></div>
+    </article>
+    <article class="case reveal" aria-labelledby="case-ai">
+      <span class="case-number micro">003 / 003</span>
+      <div class="case-info">
+        <div class="case-type micro" data-en="AI — SERVICE AUTOMATION" data-ru="ИИ — АВТОМАТИЗАЦИЯ СЕРВИСА">AI — SERVICE AUTOMATION</div>
+        <h3 id="case-ai">AI<br>Administrator</h3>
+        <p class="case-desc" data-en="A Telegram-based service workflow with AI-assisted request handling and a recorded end-to-end demo." data-ru="Сервисный сценарий на базе Telegram с ИИ-обработкой обращений и видеодемонстрацией работы.">A Telegram-based service workflow with AI-assisted request handling and a recorded end-to-end demo.</p>
+        <div class="case-stack"><span>n8n</span><span>Telegram</span><span>AI</span><span>Integrations</span></div>
+        <button type="button" class="case-link" data-case="ai"><span data-en="EXPLORE CASE" data-ru="ОТКРЫТЬ КЕЙС">EXPLORE CASE</span><span class="arrow" aria-hidden="true">↗</span></button>
+        <div class="status micro" data-en="VIDEO DEMONSTRATION" data-ru="ВИДЕОДЕМОНСТРАЦИЯ">VIDEO DEMONSTRATION</div>
+      </div>
+      <div class="case-media"><video muted playsinline preload="metadata" aria-label="AI Administrator demo video"><source src="assets/0911 (online-video-cutter.com).mp4" type="video/mp4"></video><span class="media-index">HELLIOS / 003</span><span class="media-label" data-en="OPEN CASE TO WATCH DEMO ↗" data-ru="ОТКРОЙТЕ КЕЙС ДЛЯ ПРОСМОТРА ↗">OPEN CASE TO WATCH DEMO ↗</span></div>
+    </article>
+  </div>
+  <div class="project-grid dynamic-projects" aria-label="Additional published projects"></div>
+  <div class="work-foot"><span data-en="SELECTED PROJECTS / 2026" data-ru="ИЗБРАННЫЕ ПРОЕКТЫ / 2026">SELECTED PROJECTS / 2026</span><span data-en="CASE DETAILS ARE AVAILABLE FOR EACH PROJECT." data-ru="ПОДРОБНОСТИ ДОСТУПНЫ В КАЖДОМ КЕЙСЕ.">CASE DETAILS ARE AVAILABLE FOR EACH PROJECT.</span></div>
 </section>
-<section class="section shell" id="about"><div class="section-label">03 / Approach</div><h2 class="section-title reveal">Clarity in every layer.</h2><p class="section-intro reveal">Practical engineering, thoughtful interfaces and clear communication.</p>
-<div class="about-grid"><div class="glass about-panel reveal"><span class="mono">HOW WE THINK</span><h3>Make complexity feel simple.</h3><p>Every project starts with the real workflow, not a list of fashionable technologies. The focus is on understandable requirements, maintainable integrations and an interface people can actually use.</p><p>Technical details and screenshots are shared when permitted.</p></div>
-<div class="glass about-panel reveal"><span class="mono">OUR PROCESS</span><div class="process"><div class="process-row"><span class="mono">01</span>Understand the scope</div><div class="process-row"><span class="mono">02</span>Design the workflow</div><div class="process-row"><span class="mono">03</span>Build and integrate</div><div class="process-row"><span class="mono">04</span>Test, refine, deliver</div></div></div></div>
+
+<section class="section shell" id="services" aria-labelledby="services-heading">
+  <div class="section-head reveal">
+    <div class="section-index micro" data-en="02 / CAPABILITIES" data-ru="02 / КОМПЕТЕНЦИИ">02 / CAPABILITIES</div>
+    <div><h2 class="section-heading" id="services-heading"><span data-en="Complex inside." data-ru="Сложно внутри.">Complex inside.</span><br><span class="ghost" data-en="Simple outside." data-ru="Просто снаружи.">Simple outside.</span></h2><p class="section-lede" data-en="End-to-end engineering, from the first requirement to a system people can actually use." data-ru="Разработка от постановки задачи до системы, которой действительно удобно пользоваться.">End-to-end engineering, from the first requirement to a system people can actually use.</p></div>
+  </div>
+  <div class="services">
+    <div class="service-row reveal"><span class="service-num micro">01</span><div class="service-name" data-en="Bots & automation" data-ru="Боты и автоматизация">Bots & automation</div><p class="service-desc" data-en="Telegram and Discord workflows, notifications, moderation and intelligent assistance." data-ru="Сценарии Telegram и Discord, уведомления, модерация и интеллектуальные помощники.">Telegram and Discord workflows, notifications, moderation and intelligent assistance.</p><span class="service-symbol" aria-hidden="true">↗</span></div>
+    <div class="service-row reveal"><span class="service-num micro">02</span><div class="service-name" data-en="Web platforms" data-ru="Веб-платформы">Web platforms</div><p class="service-desc" data-en="Custom dashboards, internal tools and interfaces designed for real operations." data-ru="Кастомные панели управления, внутренние сервисы и интерфейсы под реальные процессы.">Custom dashboards, internal tools and interfaces designed for real operations.</p><span class="service-symbol" aria-hidden="true">↗</span></div>
+    <div class="service-row reveal"><span class="service-num micro">03</span><div class="service-name" data-en="Backend & APIs" data-ru="Бэкенд и API">Backend & APIs</div><p class="service-desc" data-en="Service integrations, databases, server-side logic and connected infrastructure." data-ru="Интеграции сервисов, базы данных, серверная логика и связанная инфраструктура.">Service integrations, databases, server-side logic and connected infrastructure.</p><span class="service-symbol" aria-hidden="true">↗</span></div>
+    <div class="service-row reveal"><span class="service-num micro">04</span><div class="service-name" data-en="AI workflows" data-ru="ИИ-сценарии">AI workflows</div><p class="service-desc" data-en="AI-assisted communication, task orchestration and practical business automation." data-ru="ИИ-обработка коммуникаций, организация задач и прикладная автоматизация бизнеса.">AI-assisted communication, task orchestration and practical business automation.</p><span class="service-symbol" aria-hidden="true">↗</span></div>
+  </div>
+  <div class="stack-band reveal" aria-label="Technology stack"><span>TypeScript</span><span>Node.js</span><span>Next.js</span><span>React</span><span>Python</span><span>PostgreSQL</span><span>Prisma</span><span>Docker</span><span>n8n</span></div>
 </section>
-<section class="shell" id="contact"><div class="contact glass reveal"><div class="section-label">04 / Contact</div><h2>Let's build something<br>worth using.</h2><p>Have a project in mind? Share the scope, features and timeline.<br>Let's figure out the right approach.</p><a class="pill primary" href="https://t.me/helliosweb" target="_blank" rel="noopener noreferrer">Message on Telegram <span class="arrow">↗</span></a><span class="handle mono">@helliosweb</span></div></section>
+
+<section class="section shell" id="about" aria-labelledby="about-heading">
+  <div class="section-head reveal">
+    <div class="section-index micro" data-en="03 / OUR APPROACH" data-ru="03 / НАШ ПОДХОД">03 / OUR APPROACH</div>
+    <div><h2 class="section-heading" id="about-heading"><span data-en="Built with" data-ru="Продумано">Built with</span><br><span class="ghost" data-en="intention." data-ru="до деталей.">intention.</span></h2></div>
+  </div>
+  <div class="approach-layout reveal">
+    <p class="approach-statement"><span data-en="No noise." data-ru="Без лишнего.">No noise.</span><br><em data-en="Just systems that work." data-ru="Только то, что работает.">Just systems that work.</em></p>
+    <div class="approach-right">
+      <p data-en="We start with the problem, not a trend. We design the workflow, build the right components and refine the experience until the system makes sense. Screenshots and technical details are shared only when permitted." data-ru="Начинаем с задачи, а не с модного тренда. Проектируем сценарий, создаём нужные компоненты и доводим систему до понятного результата. Скриншоты и технические детали публикуем только с разрешения.">We start with the problem, not a trend. We design the workflow, build the right components and refine the experience until the system makes sense. Screenshots and technical details are shared only when permitted.</p>
+      <div class="process-row"><span>01</span><span data-en="Discover the problem" data-ru="Разобраться в задаче">Discover the problem</span></div>
+      <div class="process-row"><span>02</span><span data-en="Architect the workflow" data-ru="Спроектировать процесс">Architect the workflow</span></div>
+      <div class="process-row"><span>03</span><span data-en="Build & integrate" data-ru="Разработать и интегрировать">Build & integrate</span></div>
+      <div class="process-row"><span>04</span><span data-en="Test, refine, deliver" data-ru="Проверить, улучшить, передать">Test, refine, deliver</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-heading">
+  <div class="shell">
+    <div class="section-index micro" data-en="04 / START A CONVERSATION" data-ru="04 / НАЧАТЬ ДИАЛОГ">04 / START A CONVERSATION</div>
+    <h2 id="contact-heading" class="reveal"><span data-en="Have an idea?" data-ru="Есть идея?">Have an idea?</span><br><em data-en="Let's build it." data-ru="Реализуем.">Let's build it.</em></h2>
+    <div class="contact-foot reveal">
+      <div><p data-en="Tell us what you're building, what needs to work and when. We'll talk through the right approach." data-ru="Расскажите о проекте, задачах и сроках. Обсудим, как лучше реализовать идею.">Tell us what you're building, what needs to work and when. We'll talk through the right approach.</p><span class="contact-handle">@helliosweb</span></div>
+      <a class="contact-cta" href="https://t.me/helliosweb" target="_blank" rel="noopener noreferrer"><span data-en="MESSAGE ON TELEGRAM" data-ru="НАПИСАТЬ В TELEGRAM">MESSAGE ON TELEGRAM</span><span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
 </main>
-<footer class="site-footer shell mono"><span>© <span id="year">2026</span> HELLIOS. BUILT WITH INTENT.</span><a href="https://github.com/Helliosov" target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href="#top">BACK TO TOP ↑</a></footer>
-<script>
-document.getElementById("year").textContent=new Date().getFullYear();
-const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const reveals=[...document.querySelectorAll(".reveal")];
-reveals.forEach((el,i)=>{if(el.classList.contains("service")||el.classList.contains("project"))el.style.setProperty("--reveal-delay",(i%4)*85+"ms")});
-if("IntersectionObserver"in window&&!reduceMotion){
- const revealObserver=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add("visible");revealObserver.unobserve(entry.target)}}},{threshold:.07,rootMargin:"0px 0px -20px 0px"});
- reveals.forEach(el=>revealObserver.observe(el));
-}else reveals.forEach(el=>el.classList.add("visible"));
-const progress=document.getElementById("reading-progress");
-let raf=0;
-function updateProgress(){raf=0;const max=document.documentElement.scrollHeight-innerHeight;progress.style.transform="scaleX("+(max>0?scrollY/max:0)+")"}
-addEventListener("scroll",()=>{if(!raf)raf=requestAnimationFrame(updateProgress)},{passive:true});updateProgress();
-if(!reduceMotion&&window.matchMedia("(hover: hover) and (pointer: fine)").matches){
- document.querySelectorAll(".project,.service").forEach(el=>{
-  el.addEventListener("pointermove",event=>{const r=el.getBoundingClientRect();el.style.setProperty("--mx",((event.clientX-r.left)/r.width*100)+"%");el.style.setProperty("--my",((event.clientY-r.top)/r.height*100)+"%")},{passive:true});
- });
-}
-const demo=document.querySelector(".ai-demo video");
-if(demo){demo.muted=true;demo.defaultMuted=true;demo.setAttribute("muted","");
- if("IntersectionObserver"in window){const videoObserver=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting&&entry.intersectionRatio>=.15){demo.play().catch(()=>{})}else{demo.pause()}}},{threshold:[0,.15,.35]});videoObserver.observe(demo)}
- else demo.play().catch(()=>{});
-}
-</script>
+<footer class="site-footer shell"><span>© <span id="year">2026</span> HELLIOS. <span data-en="BUILT WITH INTENT." data-ru="СОЗДАНО СО СМЫСЛОМ.">BUILT WITH INTENT.</span></span><a href="https://github.com/Helliosov" target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href="#top" data-en="BACK TO TOP ↑" data-ru="НАВЕРХ ↑">BACK TO TOP ↑</a></footer>
+<div id="case-dialog" class="case-dialog" role="dialog" aria-modal="true" aria-label="Project case study" aria-hidden="true">
+  <div class="dialog-inner"><div class="dialog-top"><span class="micro muted">HELLIOS / CASE STUDY</span><button type="button" class="dialog-close" id="dialog-close">CLOSE ✕</button></div><div id="dialog-content"></div></div>
+</div>
 <script src="portfolio.js" defer></script>
-<script src="i18n.js" defer></script>
-</body></html>
+<script src="noir.js?v=1" defer></script>
+</body>
+</html>
