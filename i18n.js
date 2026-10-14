@@ -157,6 +157,6 @@
         avatar.style.display = 'block';
       }
     };
-    telegramAvatar.src = 'https://t.me/i/userpic/320/sru58xfzpmq.jpg?refresh=' + Math.floor(Date.now()/3600000);
+    telegramAvatar.src = 'https://t.me/i/userpic/320/helliosweb.jpg?refresh=' + Math.floor(Date.now()/3600000);
   }
 })();
