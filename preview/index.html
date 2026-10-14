@@ -83,7 +83,7 @@ if(!reduced&&matchMedia('(hover:hover) and (pointer:fine)').matches){
   resize();addEventListener('resize',resize,{passive:true});
   const tick=()=>{ctx.clearRect(0,0,cw,ch);particles=particles.filter(p=>p.life>0);for(const p of particles){p.x+=p.vx;p.y+=p.vy;p.vx*=.985;p.vy*=.985;p.life-=.022;ctx.globalAlpha=Math.max(0,p.life)*.78;ctx.fillStyle=p.dark?'#111':'#ddd';ctx.fillRect(p.x,p.y,p.size,p.size)}ctx.globalAlpha=1;if(particles.length)requestAnimationFrame(tick);else running=false};
   const spawn=(x,y,dark)=>{for(let i=0;i<4&&particles.length<110;i++){const a=Math.random()*Math.PI*2,s=Math.random()*1.7+.3;particles.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-.5,life:Math.random()*.45+.45,size:Math.random()*2+.5,dark})}if(!running){running=true;requestAnimationFrame(tick)}};
-  $('.cap-card').forEach(card=>{
+  $$('.cap-card').forEach(card=>{
    card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect();card.style.setProperty('--dx',Math.max(-10,Math.min(12,(e.clientX-r.left-r.width/2)*.055))+'px');card.style.setProperty('--px',((e.clientX-r.left)/r.width*100)+'%');card.style.setProperty('--py',((e.clientY-r.top)/r.height*100)+'%');if(performance.now()-lastSpawn>36){spawn(e.clientX,e.clientY,true);lastSpawn=performance.now()}},{passive:true});
    card.addEventListener('pointerleave',()=>card.style.setProperty('--dx','0px'));
   });
