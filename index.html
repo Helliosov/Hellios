@@ -12,9 +12,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="noir.css?v=1">
+<link rel="stylesheet" href="noir.css?v=2">
+<script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
+<div class="site-loader" id="site-loader" aria-label="Loading HELLIOS" role="status">
+ <div class="loader-top micro"><span>HELLIOS® / VISUAL SYSTEM</span><span>EST. 2026 — INDEPENDENT</span></div>
+ <div class="loader-center"><div class="loader-glyph" aria-hidden="true"><span>H</span><span>H</span></div><div class="loader-rule"></div><p class="micro" data-en="ASSEMBLING THE EXPERIENCE" data-ru="ЗАГРУЗКА ИНТЕРФЕЙСА">ASSEMBLING THE EXPERIENCE</p></div>
+ <div class="loader-bottom micro"><span data-en="DESIGNED TO WORK." data-ru="СОЗДАНО РАБОТАТЬ.">DESIGNED TO WORK.</span><span id="loader-percent">000%</span></div>
+</div>
+<div class="cursor-core" id="cursor-core" aria-hidden="true"></div><div class="cursor-ring" id="cursor-ring" aria-hidden="true"><span id="cursor-label">VIEW</span></div>
 <div class="progress-track" id="reading-progress" aria-hidden="true"></div>
 <header class="site-header shell">
   <a class="logo" href="#top" aria-label="HELLIOS home"><span class="logo-mark"><img id="telegram-avatar" src="https://avatars.githubusercontent.com/u/263466763?v=20261014" alt="HELLIOS avatar" referrerpolicy="no-referrer" decoding="async"><span class="avatar-fallback" aria-hidden="true">H</span></span>HELLIOS<span style="font-size:9px;color:#777;letter-spacing:0;margin-left:5px">®</span></a>
@@ -33,7 +40,13 @@
     <p data-en="Building precise digital systems, interfaces and automations for real-world problems." data-ru="Создаём продуманные цифровые системы, интерфейсы и автоматизацию для реальных задач.">Building precise digital systems, interfaces and automations for real-world problems.</p>
   </div>
   <div class="hero-stage">
-    <div class="hero-visual" aria-hidden="true"><div class="orbit-line"></div><div class="orbit-line"></div><div class="orbit-core"></div></div>
+    <div class="hero-art" aria-hidden="true">
+ <div class="art-axis art-axis-v"></div><div class="art-axis art-axis-h"></div>
+ <div class="art-outer"><span class="art-corner tl"></span><span class="art-corner tr"></span><span class="art-corner bl"></span><span class="art-corner br"></span>
+  <div class="art-sculpture"><span class="art-face art-face-one">H</span><span class="art-face art-face-two">H</span><span class="art-face art-face-three">H</span></div>
+ </div>
+ <div class="art-caption micro">H/01 — FORM FOLLOWS FUNCTION</div><div class="art-coordinate micro">48° / 002 / HELLIOS</div>
+</div>
     <h1 id="hero-title" class="hero-title">HELLIOS</h1>
     <div class="hero-subrow">
       <div>
@@ -51,43 +64,33 @@
     <div class="section-index micro" data-en="01 / SELECTED WORK" data-ru="01 / ИЗБРАННЫЕ ПРОЕКТЫ">01 / SELECTED WORK</div>
     <div><h2 class="section-heading" id="work-heading"><span data-en="Proof, not" data-ru="Не обещания.">Proof, not</span><br><span class="ghost" data-en="promises." data-ru="Разработки.">promises.</span></h2><p class="section-lede" data-en="Real interfaces, working systems and honest prototypes. Each project has its own story, stack and status." data-ru="Реальные интерфейсы, работающие системы и честно обозначенные прототипы. У каждого проекта — своя история, технологии и статус.">Real interfaces, working systems and honest prototypes. Each project has its own story, stack and status.</p></div>
   </div>
-  <div class="case-list">
-    <article class="case reveal" aria-labelledby="case-state">
-      <span class="case-number micro">001 / 003</span>
-      <div class="case-info">
-        <div class="case-type micro" data-en="DISCORD INFRASTRUCTURE — MANAGEMENT SYSTEM" data-ru="DISCORD-ИНФРАСТРУКТУРА — СИСТЕМА УПРАВЛЕНИЯ">DISCORD INFRASTRUCTURE — MANAGEMENT SYSTEM</div>
-        <h3 id="case-state">State<br>Kutuzovsky</h3>
-        <p class="case-desc" data-en="A connected bot and dashboard for moderation, curator operations, appeals and server activity." data-ru="Связанные бот и веб-панель для модерации, работы кураторов, обращений и активности серверов.">A connected bot and dashboard for moderation, curator operations, appeals and server activity.</p>
-        <div class="case-stack"><span>TypeScript</span><span>discord.js</span><span>Next.js</span><span>PostgreSQL</span></div>
-        <button type="button" class="case-link" data-case="state"><span data-en="EXPLORE CASE" data-ru="ОТКРЫТЬ КЕЙС">EXPLORE CASE</span><span class="arrow" aria-hidden="true">↗</span></button>
-        <div class="status working micro" data-en="WORKING PROJECT" data-ru="РАБОТАЮЩИЙ ПРОЕКТ">WORKING PROJECT</div>
+  <div class="archive reveal" id="archive">
+    <div class="archive-toolbar micro"><span data-en="THE COLLECTION / 001—003" data-ru="КОЛЛЕКЦИЯ / 001—003">THE COLLECTION / 001—003</span><span data-en="SELECT A SYSTEM TO EXPLORE ↘" data-ru="ВЫБЕРИТЕ ПРОЕКТ ДЛЯ ПРОСМОТРА ↘">SELECT A SYSTEM TO EXPLORE ↘</span></div>
+    <div class="archive-layout">
+      <div class="archive-index" role="group" aria-label="Project collection">
+        <button type="button" class="archive-item is-active" data-archive="state" aria-pressed="true">
+          <span class="archive-item-num micro">01 / 03</span><span class="archive-item-body"><strong>STATE<br>KUTUZOVSKY</strong><small data-en="DISCORD INFRASTRUCTURE" data-ru="DISCORD-ИНФРАСТРУКТУРА">DISCORD INFRASTRUCTURE</small></span><span class="archive-item-arrow" aria-hidden="true">↗</span>
+        </button>
+        <button type="button" class="archive-item" data-archive="elyvar" aria-pressed="false">
+          <span class="archive-item-num micro">02 / 03</span><span class="archive-item-body"><strong>ELYVAR</strong><small data-en="WEB3 / INTERFACE" data-ru="WEB3 / ИНТЕРФЕЙС">WEB3 / INTERFACE</small></span><span class="archive-item-arrow" aria-hidden="true">↗</span>
+        </button>
+        <button type="button" class="archive-item" data-archive="ai" aria-pressed="false">
+          <span class="archive-item-num micro">03 / 03</span><span class="archive-item-body"><strong>AI<br>ADMINISTRATOR</strong><small data-en="INTELLIGENT AUTOMATION" data-ru="ИИ-АВТОМАТИЗАЦИЯ">INTELLIGENT AUTOMATION</small></span><span class="archive-item-arrow" aria-hidden="true">↗</span>
+        </button>
+        <div class="archive-index-foot micro"><span data-en="CURATED SOFTWARE / 2026" data-ru="ПОДБОРКА РАЗРАБОТОК / 2026">CURATED SOFTWARE / 2026</span><span>H/ARCHIVE</span></div>
       </div>
-      <div class="case-media"><img src="assets/state-showcase.svg" alt="State Kutuzovsky dashboard presentation artwork" data-alt-en="State Kutuzovsky dashboard presentation artwork" data-alt-ru="Презентационная иллюстрация панели State Kutuzovsky" loading="lazy" decoding="async"><span class="media-index">HELLIOS / 001</span><span class="media-label" data-en="SHOWCASE ARTWORK · NOT A SCREENSHOT" data-ru="ПРЕЗЕНТАЦИОННАЯ ИЛЛЮСТРАЦИЯ · НЕ СКРИНШОТ">SHOWCASE ARTWORK · NOT A SCREENSHOT</span></div>
-    </article>
-    <article class="case reveal" aria-labelledby="case-elyvar">
-      <span class="case-number micro">002 / 003</span>
-      <div class="case-info">
-        <div class="case-type micro" data-en="WEB3 — INTERFACE & MONITORING" data-ru="WEB3 — ИНТЕРФЕЙС И МОНИТОРИНГ">WEB3 — INTERFACE & MONITORING</div>
-        <h3 id="case-elyvar">ELYVAR</h3>
-        <p class="case-desc" data-en="A responsive token-monitoring experience built around live-oriented states, metadata and clear presentation." data-ru="Адаптивный интерфейс мониторинга токенов со статусами, метаданными и понятной визуализацией.">A responsive token-monitoring experience built around live-oriented states, metadata and clear presentation.</p>
-        <div class="case-stack"><span>React</span><span>Next.js</span><span>TypeScript</span><span>API</span></div>
-        <button type="button" class="case-link" data-case="elyvar"><span data-en="EXPLORE CASE" data-ru="ОТКРЫТЬ КЕЙС">EXPLORE CASE</span><span class="arrow" aria-hidden="true">↗</span></button>
-        <div class="status micro" data-en="PROTOTYPE" data-ru="ПРОТОТИП">PROTOTYPE</div>
+      <div class="archive-display" id="archive-display">
+        <div class="archive-screen">
+          <div class="archive-screen-top micro"><span><i class="archive-led"></i> <span data-en="PROJECT FILE / ACTIVE" data-ru="КАРТОЧКА ПРОЕКТА / АКТИВНА">PROJECT FILE / ACTIVE</span></span><span id="archive-screen-index">001 — 003</span></div>
+          <div class="archive-image-stage" id="archive-image-stage"><img id="archive-image" src="assets/state-showcase.svg" alt="State Kutuzovsky presentation artwork" decoding="async"><video id="archive-video" muted playsinline preload="none" aria-label="AI Administrator demo" hidden></video><div class="archive-scan" aria-hidden="true"></div><span class="archive-media-note micro" id="archive-media-note" data-en="SHOWCASE ARTWORK / NOT A SCREENSHOT" data-ru="ИЛЛЮСТРАЦИЯ / НЕ СКРИНШОТ">SHOWCASE ARTWORK / NOT A SCREENSHOT</span></div>
+          <div class="archive-screen-bottom micro"><span id="archive-file-code">FILE: SK-001</span><span>HELLIOS / ©2026</span></div>
+        </div>
+        <div class="archive-display-info">
+          <div><span class="archive-category micro" id="archive-category" data-en="DISCORD INFRASTRUCTURE" data-ru="DISCORD-ИНФРАСТРУКТУРА">DISCORD INFRASTRUCTURE</span><h3 id="archive-title">STATE KUTUZOVSKY</h3><p id="archive-description" data-en="A connected Discord management system with a web dashboard, moderation logs and curator workflows." data-ru="Система управления Discord с веб-панелью, журналами модерации и инструментами кураторов.">A connected Discord management system with a web dashboard, moderation logs and curator workflows.</p></div>
+          <button type="button" class="archive-open" id="archive-open" data-case="state"><span data-en="OPEN PROJECT FILE" data-ru="ОТКРЫТЬ КЕЙС">OPEN PROJECT FILE</span><span aria-hidden="true">↗</span></button>
+        </div>
       </div>
-      <div class="case-media"><img src="assets/Снимок экрана 2026-10-08 234549.png" alt="Actual ELYVAR interface screenshot" data-alt-en="Actual ELYVAR interface screenshot" data-alt-ru="Реальный скриншот интерфейса ELYVAR" loading="lazy" decoding="async"><span class="media-index">HELLIOS / 002</span><span class="media-label" data-en="REAL PROJECT SCREENSHOT" data-ru="РЕАЛЬНЫЙ СКРИНШОТ ПРОЕКТА">REAL PROJECT SCREENSHOT</span></div>
-    </article>
-    <article class="case reveal" aria-labelledby="case-ai">
-      <span class="case-number micro">003 / 003</span>
-      <div class="case-info">
-        <div class="case-type micro" data-en="AI — SERVICE AUTOMATION" data-ru="ИИ — АВТОМАТИЗАЦИЯ СЕРВИСА">AI — SERVICE AUTOMATION</div>
-        <h3 id="case-ai">AI<br>Administrator</h3>
-        <p class="case-desc" data-en="A Telegram-based service workflow with AI-assisted request handling and a recorded end-to-end demo." data-ru="Сервисный сценарий на базе Telegram с ИИ-обработкой обращений и видеодемонстрацией работы.">A Telegram-based service workflow with AI-assisted request handling and a recorded end-to-end demo.</p>
-        <div class="case-stack"><span>n8n</span><span>Telegram</span><span>AI</span><span>Integrations</span></div>
-        <button type="button" class="case-link" data-case="ai"><span data-en="EXPLORE CASE" data-ru="ОТКРЫТЬ КЕЙС">EXPLORE CASE</span><span class="arrow" aria-hidden="true">↗</span></button>
-        <div class="status micro" data-en="VIDEO DEMONSTRATION" data-ru="ВИДЕОДЕМОНСТРАЦИЯ">VIDEO DEMONSTRATION</div>
-      </div>
-      <div class="case-media"><video muted playsinline preload="metadata" aria-label="AI Administrator demo video"><source src="assets/0911 (online-video-cutter.com).mp4" type="video/mp4"></video><span class="media-index">HELLIOS / 003</span><span class="media-label" data-en="OPEN CASE TO WATCH DEMO ↗" data-ru="ОТКРОЙТЕ КЕЙС ДЛЯ ПРОСМОТРА ↗">OPEN CASE TO WATCH DEMO ↗</span></div>
-    </article>
+    </div>
   </div>
   <div class="project-grid dynamic-projects" aria-label="Additional published projects"></div>
   <div class="work-foot"><span data-en="SELECTED PROJECTS / 2026" data-ru="ИЗБРАННЫЕ ПРОЕКТЫ / 2026">SELECTED PROJECTS / 2026</span><span data-en="CASE DETAILS ARE AVAILABLE FOR EACH PROJECT." data-ru="ПОДРОБНОСТИ ДОСТУПНЫ В КАЖДОМ КЕЙСЕ.">CASE DETAILS ARE AVAILABLE FOR EACH PROJECT.</span></div>
@@ -140,6 +143,6 @@
   <div class="dialog-inner"><div class="dialog-top"><span class="micro muted">HELLIOS / CASE STUDY</span><button type="button" class="dialog-close" id="dialog-close">CLOSE ✕</button></div><div id="dialog-content"></div></div>
 </div>
 <script src="portfolio.js" defer></script>
-<script src="noir.js?v=1" defer></script>
+<script src="noir.js?v=2" defer></script>
 </body>
 </html>
