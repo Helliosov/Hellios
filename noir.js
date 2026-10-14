@@ -53,6 +53,7 @@ function applyLanguage(next){
   if(desc) desc.content=lang==='ru'?'HELLIOS — цифровые системы, боты, веб-приложения и автоматизация. Кейсы и разработка.':'HELLIOS — software systems, bots, web applications and intelligent automation. Selected work and case studies.';
   switchers.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===lang)));
   translate();
+  refreshArchive(true);
   try{localStorage.setItem('hellios-language',lang)}catch(e){}
   if($('#case-dialog')?.getAttribute('aria-hidden')==='false') renderCase($('#case-dialog').dataset.case);
 }
@@ -88,11 +89,11 @@ if(!reduce&&'IntersectionObserver' in window){
  revealed.forEach(el=>io.observe(el));
 }else revealed.forEach(el=>el.classList.add('visible'));
 if(!reduce&&matchMedia('(hover:hover) and (pointer:fine)').matches){
- const visual=$('.hero-visual');
+ const visual=$('.hero-art');
  $('.hero')?.addEventListener('pointermove',e=>{
   const rect=e.currentTarget.getBoundingClientRect();
   const x=(e.clientX-rect.left)/rect.width-.5,y=(e.clientY-rect.top)/rect.height-.5;
-  if(visual)visual.style.transform='translate3d('+(x*24)+'px,'+(y*24)+'px,0)';
+  if(visual)visual.style.transform='translate3d('+(x*16)+'px,'+(y*12)+'px,0)';
  },{passive:true});
 }
 const dialog=$('#case-dialog'),content=$('#dialog-content'),close=$('#dialog-close');
@@ -150,5 +151,95 @@ document.addEventListener('keydown',e=>{
   else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
  }
 });
+
+/* The archive is a single curated display, not three exposed case cards. */
+const archiveData={
+ state:{num:'001 — 003',code:'FILE: SK-001',image:'assets/state-showcase.svg',category:{en:'DISCORD INFRASTRUCTURE',ru:'DISCORD-ИНФРАСТРУКТУРА'},title:'STATE KUTUZOVSKY',description:{en:'A connected Discord management system with a web dashboard, moderation logs and curator workflows.',ru:'Система управления Discord с веб-панелью, журналами модерации и инструментами кураторов.'},note:{en:'SHOWCASE ARTWORK / NOT A SCREENSHOT',ru:'ИЛЛЮСТРАЦИЯ / НЕ СКРИНШОТ'}},
+ elyvar:{num:'002 — 003',code:'FILE: EL-002',image:'assets/Снимок экрана 2026-10-08 234549.png',category:{en:'WEB3 / INTERFACE',ru:'WEB3 / ИНТЕРФЕЙС'},title:'ELYVAR',description:{en:'A responsive Web3 monitoring prototype with a real interface screenshot and a tested demonstration workflow.',ru:'Адаптивный прототип Web3-мониторинга с реальным скриншотом интерфейса и проверенным демонстрационным сценарием.'},note:{en:'REAL PROJECT SCREENSHOT',ru:'РЕАЛЬНЫЙ СКРИНШОТ ПРОЕКТА'}},
+ ai:{num:'003 — 003',code:'FILE: AI-003',video:'assets/0911 (online-video-cutter.com).mp4',category:{en:'INTELLIGENT AUTOMATION',ru:'ИИ-АВТОМАТИЗАЦИЯ'},title:'AI ADMINISTRATOR',description:{en:'Telegram-based request handling with AI and n8n automation, demonstrated in an original video.',ru:'Обработка обращений через Telegram с помощью ИИ и n8n. Работа показана на оригинальном видео.'},note:{en:'RECORDED WORKFLOW / VIDEO DEMO',ru:'ЗАПИСЬ РАБОТЫ / ВИДЕОДЕМО'}}
+};
+let activeArchive='state',archiveTimeout=null;
+const archiveItems=[...document.querySelectorAll('[data-archive]')];
+function refreshArchive(immediate=false){
+ const data=archiveData[activeArchive];if(!data)return;
+ const stage=$('#archive-image-stage');if(!stage)return;
+ const img=$('#archive-image'),video=$('#archive-video');
+ const render=()=>{
+  archiveItems.forEach(item=>{const active=item.dataset.archive===activeArchive;item.classList.toggle('is-active',active);item.setAttribute('aria-pressed',String(active))});
+  $('#archive-screen-index').textContent=data.num;
+  $('#archive-file-code').textContent=data.code;
+  $('#archive-title').textContent=data.title;
+  $('#archive-category').textContent=data.category[lang];
+  $('#archive-description').textContent=data.description[lang];
+  $('#archive-media-note').textContent=data.note[lang];
+  $('#archive-open').dataset.case=activeArchive;
+  if(data.video){
+   img.hidden=true;video.hidden=false;
+   if(video.getAttribute('src')!==data.video){video.src=data.video;video.load()}
+   video.muted=true;video.loop=true;video.playsInline=true;video.play().catch(()=>{});
+  }else{
+   video.pause();video.hidden=true;img.hidden=false;
+   if(img.getAttribute('src')!==data.image)img.src=data.image;
+   img.alt=data.title+(activeArchive==='state'?' presentation artwork':' real interface screenshot');
+  }
+  stage.classList.remove('is-switching');
+ };
+ if(archiveTimeout)clearTimeout(archiveTimeout);
+ if(immediate||reduce){render();return}
+ stage.classList.add('is-switching');
+ archiveTimeout=setTimeout(render,220);
+}
+archiveItems.forEach(item=>{
+ item.addEventListener('click',()=>{activeArchive=item.dataset.archive;refreshArchive()});
+ item.addEventListener('keydown',e=>{
+  if(e.key!=='ArrowDown'&&e.key!=='ArrowUp'&&e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+  e.preventDefault();
+  const current=archiveItems.indexOf(item);
+  const direction=(e.key==='ArrowDown'||e.key==='ArrowRight')?1:-1;
+  const next=archiveItems[(current+direction+archiveItems.length)%archiveItems.length];
+  next.focus();next.click();
+ });
+});
+/* Cursor: one RAF loop, disabled on touch devices and reduced-motion preferences. */
+if(!reduce&&matchMedia('(hover:hover) and (pointer:fine)').matches){
+ const core=$('#cursor-core'),ring=$('#cursor-ring'),label=$('#cursor-label');
+ if(core&&ring){
+  document.documentElement.classList.add('has-custom-cursor');
+  let x=-100,y=-100,rx=-100,ry=-100,visible=false;
+  const move=e=>{x=e.clientX;y=e.clientY;if(!visible){visible=true;rx=x;ry=y;core.classList.add('is-visible');ring.classList.add('is-visible')}};
+  addEventListener('pointermove',move,{passive:true});
+  document.addEventListener('pointerout',e=>{if(!e.relatedTarget){visible=false;core.classList.remove('is-visible');ring.classList.remove('is-visible')}});
+  const animate=()=>{
+   rx+=(x-rx)*.19;ry+=(y-ry)*.19;
+   core.style.transform='translate3d('+x+'px,'+y+'px,0)';
+   ring.style.transform='translate3d('+rx+'px,'+ry+'px,0)';
+   requestAnimationFrame(animate);
+  };requestAnimationFrame(animate);
+  document.addEventListener('pointerover',e=>{
+   const target=e.target.closest('a,button,[role="button"]');
+   ring.classList.toggle('is-hover',!!target);
+   label.textContent=target?.matches('[data-case],.archive-item')?'VIEW':'GO';
+  });
+ }
+}
+/* Brief branded intro, once per tab session; no network dependency or fake long loading. */
+const loader=$('#site-loader'),percentage=$('#loader-percent');
+if(loader){
+ let seen=false;try{seen=sessionStorage.getItem('hellios-intro-seen')==='1'}catch(e){}
+ const duration=seen?350:1250;
+ const start=performance.now();
+ function tick(now){
+  const progress=Math.min(1,(now-start)/duration);
+  percentage.textContent=String(Math.round(progress*100)).padStart(3,'0')+'%';
+  if(progress<1)requestAnimationFrame(tick);
+  else{
+   loader.classList.add('is-exiting');
+   try{sessionStorage.setItem('hellios-intro-seen','1')}catch(e){}
+   setTimeout(()=>loader.remove(),1100);
+  }
+ }
+ requestAnimationFrame(tick);
+}
+
 $('#year').textContent=new Date().getFullYear();
 })();
