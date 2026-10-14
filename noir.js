@@ -53,11 +53,10 @@ function applyLanguage(next){
   if(desc) desc.content=lang==='ru'?'HELLIOS — цифровые системы, боты, веб-приложения и автоматизация. Кейсы и разработка.':'HELLIOS — software systems, bots, web applications and intelligent automation. Selected work and case studies.';
   switchers.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===lang)));
   translate();
-  refreshArchive(true);
   try{localStorage.setItem('hellios-language',lang)}catch(e){}
   if($('#case-dialog')?.getAttribute('aria-hidden')==='false') renderCase($('#case-dialog').dataset.case);
 }
-switchers.forEach(b=>b.addEventListener('click',()=>applyLanguage(b.dataset.lang)));
+switchers.forEach(b=>b.addEventListener('click',()=>{applyLanguage(b.dataset.lang);refreshArchive(true)}));
 let initial='en';try{initial=localStorage.getItem('hellios-language')||'en'}catch(e){}
 const urlLang=new URLSearchParams(location.search).get('lang');
 if(urlLang==='ru'||urlLang==='en')initial=urlLang;
@@ -189,6 +188,7 @@ function refreshArchive(immediate=false){
  stage.classList.add('is-switching');
  archiveTimeout=setTimeout(render,220);
 }
+refreshArchive(true);
 archiveItems.forEach(item=>{
  item.addEventListener('click',()=>{activeArchive=item.dataset.archive;refreshArchive()});
  item.addEventListener('keydown',e=>{
