@@ -9,7 +9,7 @@ const dictionary = {
 };
 const cases={
   state:{
-    title:"State Kutuzovsky",
+    title:"Discord Auto Bot`s",
     category:{en:"DISCORD INFRASTRUCTURE / 2026",ru:"DISCORD-ИНФРАСТРУКТУРА / 2026"},
     intro:{en:"An administration environment that brings moderation, curator operations and server activity into one workflow.",ru:"Среда администрирования, объединяющая модерацию, работу кураторов и активность серверов в единую систему."},
     overview:{en:"A Discord bot and a connected web management panel built around the operational needs of a multi-server roleplay community. The system focuses on actionable logs, structured appeals and role-aware tools instead of fragmented manual processes.",ru:"Discord-бот и связанная веб-панель управления для сообщества с несколькими серверами. Система объединяет журналы событий, обработку обращений и инструменты администрирования с разграничением прав."},
@@ -153,7 +153,7 @@ document.addEventListener('keydown',e=>{
 
 /* The archive is a single curated display, not three exposed case cards. */
 const archiveData={
- state:{num:'001 — 003',code:'FILE: SK-001',image:'assets/state-showcase.svg',category:{en:'DISCORD INFRASTRUCTURE',ru:'DISCORD-ИНФРАСТРУКТУРА'},title:'STATE KUTUZOVSKY',description:{en:'A connected Discord management system with a web dashboard, moderation logs and curator workflows.',ru:'Система управления Discord с веб-панелью, журналами модерации и инструментами кураторов.'},note:{en:'SHOWCASE ARTWORK / NOT A SCREENSHOT',ru:'ИЛЛЮСТРАЦИЯ / НЕ СКРИНШОТ'}},
+ state:{num:'001 — 003',code:'FILE: DAB-001',image:'assets/state-showcase.svg',category:{en:'DISCORD INFRASTRUCTURE',ru:'DISCORD-ИНФРАСТРУКТУРА'},title:'Discord Auto Bot`s',description:{en:'A connected Discord management system with a web dashboard, moderation logs and curator workflows.',ru:'Система управления Discord с веб-панелью, журналами модерации и инструментами кураторов.'},note:{en:'SHOWCASE ARTWORK / NOT A SCREENSHOT',ru:'ИЛЛЮСТРАЦИЯ / НЕ СКРИНШОТ'}},
  elyvar:{num:'002 — 003',code:'FILE: EL-002',image:'assets/Снимок экрана 2026-10-08 234549.png',category:{en:'WEB3 / INTERFACE',ru:'WEB3 / ИНТЕРФЕЙС'},title:'ELYVAR',description:{en:'A responsive Web3 monitoring prototype with a real interface screenshot and a tested demonstration workflow.',ru:'Адаптивный прототип Web3-мониторинга с реальным скриншотом интерфейса и проверенным демонстрационным сценарием.'},note:{en:'REAL PROJECT SCREENSHOT',ru:'РЕАЛЬНЫЙ СКРИНШОТ ПРОЕКТА'}},
  ai:{num:'003 — 003',code:'FILE: AI-003',video:'assets/0911 (online-video-cutter.com).mp4',category:{en:'INTELLIGENT AUTOMATION',ru:'ИИ-АВТОМАТИЗАЦИЯ'},title:'AI ADMINISTRATOR',description:{en:'Telegram-based request handling with AI and n8n automation, demonstrated in an original video.',ru:'Обработка обращений через Telegram с помощью ИИ и n8n. Работа показана на оригинальном видео.'},note:{en:'RECORDED WORKFLOW / VIDEO DEMO',ru:'ЗАПИСЬ РАБОТЫ / ВИДЕОДЕМО'}}
 };

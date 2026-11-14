@@ -15,7 +15,7 @@ Open `index.html` in a browser. No dependencies or build step.
 
 ## Case studies
 
-- **State Kutuzovsky** — working Discord management system (reported by project owner).
+- **Discord Auto Bot`s** — working Discord management system (reported by project owner).
 - **ELYVAR** — Web3 interface prototype; real blockchain execution is not implemented.
 - **AI Administrator** — automation demo.
 
